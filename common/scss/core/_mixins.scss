@@ -1,0 +1,58 @@
+@use '../variables';
+
+@mixin hover-focus-active {
+
+	&:hover,
+	&:focus,
+	&:focus-visible,
+	&:active {
+		@content;
+	}
+}
+
+@mixin hover-active {
+
+	&:hover,
+	&:active {
+		@content;
+	}
+}
+
+@mixin keyboard-focus {
+
+	&:focus-visible {
+		@content;
+	}
+}
+
+@mixin gutter-padding-top($howmuch: 1) {
+	@each $breakpoint, $size in variables.$grid-breakpoints {
+		@include media-breakpoint-up($breakpoint) {
+			padding-top: map-get(variables.$gutters, $breakpoint) * ($howmuch);
+		}
+	}
+}
+
+@mixin gutter-padding-bottom($howmuch: 1) {
+	@each $breakpoint, $size in variables.$grid-breakpoints {
+		@include media-breakpoint-up($breakpoint) {
+			padding-bottom: map-get(variables.$gutters, $breakpoint) * ($howmuch);
+		}
+	}
+}
+
+@mixin gutter-margin-top($howmuch: 1) {
+	@each $breakpoint, $size in variables.$grid-breakpoints {
+		@include media-breakpoint-up($breakpoint) {
+			margin-top: map-get(variables.$gutters, $breakpoint) * ($howmuch);
+		}
+	}
+}
+
+@mixin gutter-margin-bottom($howmuch: 1) {
+	@each $breakpoint, $size in variables.$grid-breakpoints {
+		@include media-breakpoint-up($breakpoint) {
+			margin-bottom: map-get(variables.$gutters, $breakpoint) * ($howmuch);
+		}
+	}
+}

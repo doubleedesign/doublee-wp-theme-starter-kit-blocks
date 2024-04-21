@@ -1,0 +1,98 @@
+{
+    "key": "group_65abbdbfa193d",
+    "title": "Extra background options for top-level blocks",
+    "fields": [
+        {
+            "key": "field_65b4618ede56a",
+            "label": "Full width background",
+            "name": "full_width_background",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Even if the content is not set to full-width.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "doublee\/call-to-action"
+            }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "doublee\/columns-wrapper"
+            }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "doublee\/copy"
+            }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "doublee\/in-this-section"
+            }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "doublee\/table"
+            }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "doublee\/media-text"
+            }
+        ],
+	    [
+		    {
+			    "param": "block",
+			    "operator": "==",
+			    "value": "doublee\/upcoming-events"
+		    }
+	    ]
+    ],
+    "menu_order": -11,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "is_acf_component": 0,
+    "acf_component_defaults": {
+        "layout": "block",
+        "repeatable": "0",
+        "pagination": "0",
+        "rows_per_page": "20",
+        "min": "",
+        "max": "",
+        "button_label": "",
+        "appearances": ""
+    },
+    "modified": 1706417126
+}

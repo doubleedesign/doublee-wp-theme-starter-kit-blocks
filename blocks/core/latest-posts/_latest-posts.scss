@@ -1,0 +1,62 @@
+@import '../../../template-parts/card';
+
+.wp-block-latest-posts {
+	@extend .entry-content;
+	padding: 0 !important;
+	margin: 0;
+
+	&__list {
+		display: block !important;
+		flex-wrap: nowrap !important; // TODO: TEMPORARY
+		margin: 0 !important;
+
+		.has-fullwidth-background & {
+			background: transparent !important;
+		}
+
+		> li {
+			margin: 0;
+			box-sizing: border-box;
+			width: 100% !important;
+		}
+
+		&.columns-1 {
+		}
+
+		&.columns-2, &.columns-3 {
+			@include media-breakpoint-up(md) {
+			    display: grid !important;
+				grid-gap: map-get($gutters, 'sm');
+			}
+
+			@include media-breakpoint-up(lg) {
+				grid-gap: map-get($gutters, 'md');
+			}
+		}
+
+		&.columns-2 {
+			@include media-breakpoint-up(md) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+
+		&.columns-3 {
+			@include media-breakpoint-up(lg) {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+	}
+
+	&__post-title {
+		font-weight: bold;
+		font-size: 1.2rem;
+		transition: all 0.3s ease;
+
+		&:before {
+			display: none;
+		}
+	}
+
+	&__post-excerpt {
+	}
+}

@@ -1,0 +1,34 @@
+{
+	"component": {
+		"default": {
+			"path": "blocks/doublee",
+			"withStyle": true,
+			"withJson": true,
+			"customTemplates": {
+				"component": "blocks/_block-generator-templates/doublee/index.php",
+				"json": "blocks/_block-generator-templates/doublee/block.json",
+				"style": "blocks/_block-generator-templates/_template-name.scss"
+			},
+			"withTest": false,
+			"withStory": false
+		},
+		"core": {
+			"path": "blocks/core",
+			"withStyle": true,
+			"withJson": false,
+			"customTemplates": {
+				"component": "blocks/_block-generator-templates/core/index.php",
+				"style": "blocks/_block-generator-templates/_template-name.scss"
+			}
+		},
+		"custom": {
+			"path": "blocks/custom",
+			"withStyle": true,
+			"withJson": false,
+			"customTemplates": {
+				"component": "blocks/_block-generator-templates/core/index.php",
+				"style": "blocks/_block-generator-templates/_template-name.scss"
+			}
+		}
+	}
+}

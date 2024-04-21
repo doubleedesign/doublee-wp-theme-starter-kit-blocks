@@ -1,0 +1,21 @@
+.block__columns {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+
+	.row--inner {
+
+		.block__column {
+			@include media-breakpoint-down(sm) {
+				width: 100% !important;
+				flex-basis: 100% !important;
+			}
+		}
+	}
+
+	.block__column {
+		&:has(> .block__image) {
+			padding: 0;
+		}
+	}
+}

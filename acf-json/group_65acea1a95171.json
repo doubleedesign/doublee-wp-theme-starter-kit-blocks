@@ -1,0 +1,56 @@
+{
+    "key": "group_65acea1a95171",
+    "title": "Shared content settings",
+    "fields": [
+        {
+            "key": "field_65acea1b34ad4",
+            "label": "Always include in footer",
+            "name": "always_include_in_footer",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Include this content at the bottom of every page. Note: It will not be shown in the editor for each individual page, but will be shown on the front-end.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "shared_content"
+            }
+        ]
+    ],
+    "menu_order": -1,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "is_acf_component": 0,
+    "acf_component_defaults": {
+        "layout": "block",
+        "repeatable": "0",
+        "pagination": "0",
+        "rows_per_page": "20",
+        "min": "",
+        "max": "",
+        "button_label": "",
+        "appearances": ""
+    },
+    "modified": 1706239577
+}

@@ -1,0 +1,49 @@
+{
+	"root": true,
+	"extends": [
+		"plugin:@wordpress/eslint-plugin/esnext"
+	],
+	"env": {
+		"browser": true,
+		"jquery": true
+	},
+	"ignorePatterns": [
+		"gulpfile.js"
+	],
+	"rules": {
+		"semi": ["error", "always"],
+		"space-in-parens": ["error", "never"],
+		"array-bracket-spacing": ["error", "never"],
+		"object-curly-spacing": ["error", "always"],
+		"template-curly-spacing": ["error", "never"],
+		"computed-property-spacing": ["warn", "never"],
+		"space-before-function-paren": ["error", "never"],
+		"space-unary-ops": [
+			"error", {
+				"words": true,
+				"nonwords": false
+			}
+		],
+		"func-call-spacing": ["error", "never"],
+		"quotes": ["warn", "single"],
+		"brace-style": [2, "stroustrup", {"allowSingleLine": false}],
+		"linebreak-style": ["warn", "windows"]
+	},
+	"settings": {
+		"php/php-extensions": [".php"],
+		"html/html-extensions": [".html", ".php"],
+		"php/markup-replacement": {
+			"php": "",
+			"=": "0"
+		},
+		"php/remove-whitespace": true
+	},
+	"overrides": [
+		{
+			"files": ["**/*.php"],
+			"rules": {
+				"semi": ["error", "never"]
+			}
+		}
+	]
+}

@@ -1,0 +1,64 @@
+$min-contrast-ratio: 3;
+
+$white: #FFF;
+
+$black: #000;
+
+$color-contrast-dark: $black;
+
+$color-contrast-light: $white;
+
+$gutters: (
+	'xs': 0.5rem,
+	'sm': 0.5rem,
+	'md': 1rem,
+	'lg': 1rem,
+	'xl': 1.5rem,
+	'xxl': 1.5rem
+);
+
+$spacing: (
+	'xs': 0.25rem,
+	'sm': 0.5rem,
+	'md': 0.75rem,
+	'lg': 1rem,
+	'xl': 1.5rem,
+	'xxl': 2rem
+);
+
+$grid-breakpoints: (
+	'xs': 300px,
+	'sm': 620px,
+	'md': 768px,
+	'lg': 992px,
+	'xl': 1200px,
+	'xxl': 1400px
+);
+
+$container-max-widths: (
+	'xs': 576px,
+	'sm': 576px,
+	'md': 720px,
+	'lg': 960px,
+	'xl': 1140px,
+	'xxl': 1280px
+);
+
+$grid-columns: 12;
+
+$grid-gutter-width: 1.5rem;
+
+$grid-row-columns: 6;
+
+$container-padding-x: $grid-gutter-width;
+
+$aspect-ratios: (
+	'1x1': 100%,
+	'4x3': calc(3 / 4 * 100%),
+	'16x9': calc(9 / 16 * 100%),
+	'21x9': calc(9 / 21 * 100%)
+);
+
+$enable-container-classes: true;
+
+$enable-grid-classes: true;

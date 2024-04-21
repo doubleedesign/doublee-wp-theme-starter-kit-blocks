@@ -1,0 +1,33 @@
+.block__media-text {
+
+	.wp-block-media-text {
+
+		@include media-breakpoint-down(md) {
+			display: block;
+		}
+
+		&__media {
+			@include media-breakpoint-down(md) {
+				margin-bottom: map-get($spacing, 'lg');
+			}
+		}
+
+		&__content {
+			@include media-breakpoint-down(md) {
+				text-align: center;
+				padding-bottom: map-get($spacing, 'lg');
+			}
+		}
+
+		&.has-media-on-the-right {
+
+			.wp-block-media-text__media {
+				order: 1;
+
+				@include media-breakpoint-up(md) {
+					order: 2;
+				}
+			}
+		}
+	}
+}

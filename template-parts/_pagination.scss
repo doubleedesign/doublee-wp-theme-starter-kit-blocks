@@ -1,0 +1,36 @@
+.pseudo-block__pagination {
+
+	ul {
+		margin: 0;
+		padding: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		li {
+			list-style: none;
+			margin: 0;
+			padding: 0.25rem;
+
+			.btn--dark--hollow:not(.btn--prev):not(.btn--next) {
+				&:before {
+					display: none;
+				}
+
+				&:hover, &:focus, &:active {
+					background-color: var(--colour-dark) !important;
+				}
+			}
+
+			.btn--dark--hollow.btn--current {
+				background-color: var(--colour-dark) !important;
+				color: white !important;
+				opacity: 1;
+			}
+
+			.btn--dots {
+				border-color: transparent !important;
+			}
+		}
+	}
+}

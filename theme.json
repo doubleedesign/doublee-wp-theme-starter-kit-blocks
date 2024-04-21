@@ -1,0 +1,126 @@
+{
+	"version": 2,
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"settings": {
+		"appearanceTools": false,
+		"typography": {
+			"customFontSize": false,
+			"lineHeight": false,
+			"dropCap": false,
+			"fontStyle": false,
+			"fontWeight": false,
+			"letterSpacing": false,
+			"textDecoration": false,
+			"textTransform": false,
+			"fontSizes": [],
+			"fontFamilies": []
+		},
+		"color": {
+			"text": false,
+			"background": true,
+			"heading": false,
+			"link": false,
+			"defaultPalette": false,
+			"defaultGradients": false
+		},
+		"border": {
+			"radius": false,
+			"width": false,
+			"color": false,
+			"style": false
+		},
+		"blocks": {
+			"core/group": {
+				"color": {
+					"background": false,
+					"text": false,
+					"link": false
+				},
+				"typography": {
+					"customFontSize": false,
+					"lineHeight": false,
+					"dropCap": false,
+					"fontStyle": false,
+					"fontWeight": false,
+					"letterSpacing": false,
+					"textDecoration": false,
+					"textTransform": false,
+					"fontSizes": [],
+					"fontFamilies": []
+				}
+			},
+			"core/button": {
+				"color": {
+					"background": false,
+					"button": true
+				},
+				"border": {
+					"color": false,
+					"radius": false,
+					"style": false,
+					"width": false
+				}
+			},
+			"core/columns": {
+				"color": {
+					"background": false,
+					"text": false,
+					"link": false
+				}
+			},
+			"core/table": {
+				"color": {
+					"background": false,
+					"text": false,
+					"link": false
+				}
+			},
+			"core/heading": {
+				"color": {
+					"background": false,
+					"text": false,
+					"link": false
+				}
+			},
+			"core/paragraph": {
+				"color": {
+					"background": false,
+					"text": false,
+					"link": false
+				},
+				"typography": {
+					"customFontSize": false,
+					"lineHeight": false,
+					"dropCap": false,
+					"fontStyle": false,
+					"fontWeight": false,
+					"letterSpacing": false,
+					"textDecoration": false,
+					"textTransform": false,
+					"fontSizes": [],
+					"fontFamilies": []
+				}
+			},
+			"core/media-text": {
+				"color": {
+					"background": false,
+					"text": false,
+					"link": false,
+					"heading": false
+				},
+				"typography": {
+					"customFontSize": false,
+					"lineHeight": false,
+					"dropCap": false,
+					"fontStyle": false,
+					"fontWeight": false,
+					"letterSpacing": false,
+					"textDecoration": false,
+					"textTransform": false,
+					"fontSizes": [],
+					"fontFamilies": []
+				}
+			}
+		}
+	}
+}

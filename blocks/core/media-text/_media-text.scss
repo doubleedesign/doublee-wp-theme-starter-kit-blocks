@@ -1,0 +1,23 @@
+.block__media-text {
+
+	> .row > .entry-content {
+		padding: 0 !important;
+	}
+
+	.wp-block-media-text {
+		&__content {
+
+			&:has(.block__tiles) {
+				padding: 0;
+			}
+
+			.block__tiles {
+				padding: 0;
+
+				.wp-block-heading {
+					padding-top: map-get($spacing, 'md');
+				}
+			}
+		}
+	}
+}

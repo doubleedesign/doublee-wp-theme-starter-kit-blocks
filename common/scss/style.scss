@@ -1,0 +1,17 @@
+/*!
+Theme Name:     Double-E Design Foundation
+Description:    Foundation for block-based WordPress themes by Double-E Design. Designed to be used as a parent theme.
+Author:         Double-E Design
+Author URI:     https://www.doubleedesign.com.au
+Version:        0.0.1
+Text Domain:    starterkit
+*/
+
+@import 'variables';
+@import 'core/functions';
+@import 'core/reset';
+@import 'core/mixins';
+@import 'core/grid/bootstrap-grid';
+@import '../../template-parts/*';
+@import '../../blocks/*';
+@import '../../blocks/**/*';

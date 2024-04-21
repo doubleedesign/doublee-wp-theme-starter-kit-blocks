@@ -1,0 +1,13 @@
+.single-post-section {
+
+	.row {
+		justify-content: center;
+	}
+
+	&__image {
+		@include gutter-margin-bottom();
+	}
+
+	&__content {
+	}
+}

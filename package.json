@@ -1,0 +1,22 @@
+{
+	"name": "doublee-foundation",
+	"version": "0.0.1",
+	"type": "module",
+	"description": "Base for Double-E Design WordPress themes using the block editor",
+	"author": "Leesa Ward",
+	"url": "https://github.com/doubleedesign/doublee-theme-starter-kit-blocks",
+	"devDependencies": {
+		"@valtech-commerce/json-to-scss": "^1.0.1",
+		"@wordpress/eslint-plugin": "^14.12.0",
+		"@wordpress/stylelint-config": "^21.31.0",
+		"eslint": "^8.56.0",
+		"generate-vue-cli": "^0.0.2",
+		"gulp": "^4.0.2",
+		"gulp-dart-sass": "^1.1.0",
+		"gulp-sass-glob": "^1.1.0",
+		"gulp-sourcemaps": "^3.0.0",
+		"lodash": "^4.17.21",
+		"stylelint": "^14.2.0",
+		"stylelint-scss": "^5.3.2"
+	}
+}

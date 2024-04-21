@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "doublee/call-to-action",
+	"title": "Call-to-action",
+	"category": "page-layout",
+	"parent": ["core/group"],
+	"description": "",
+	"textdomain": "starterkit",
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "index.php"
+	},
+	"styles": [
+		{
+			"name": "contained",
+			"label": "Contained",
+			"isDefault": true
+		},
+		{
+			"name": "narrow",
+			"label": "Narrow"
+		},
+		{
+			"name": "fullwidth",
+			"label": "Full-width"
+		}
+	],
+	"variations": [],
+	"icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"36\" height=\"36\" aria-hidden=\"true\" focusable=\"false\"><path fill-rule=\"evenodd\" d=\"M6.863 13.644L5 13.25h-.5a.5.5 0 01-.5-.5v-3a.5.5 0 01.5-.5H5L18 6.5h2V16h-2l-3.854-.815.026.008a3.75 3.75 0 01-7.31-1.549zm1.477.313a2.251 2.251 0 004.356.921l-4.356-.921zm-2.84-3.28L18.157 8h.343v6.5h-.343L5.5 11.823v-1.146z\" clip-rule=\"evenodd\"></path></svg>",
+	"keywords": ["call-to-action"],
+	"supports": {
+		"anchor": true,
+		"color": {
+			"background": true,
+			"gradients": true
+		}
+	}
+}
