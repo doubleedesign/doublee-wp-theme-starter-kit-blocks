@@ -3,6 +3,9 @@
 // With thanks to https://github.com/gdkraus/wcag2-color-contrast/
 class Doublee_Colour_Utils {
 
+	public function __construct() {
+	}
+
 	/**
 	 * Get the theme colours
 	 *

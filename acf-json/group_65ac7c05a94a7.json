@@ -7,7 +7,7 @@
             "label": "Inner content background",
             "name": "inner_content_background",
             "aria-label": "",
-            "type": "component_field",
+            "type": "select",
             "instructions": "Note: Any other background settings such as half-backgrounds do not apply to the inner content background.",
             "required": 0,
             "conditional_logic": 0,
@@ -16,18 +16,22 @@
                 "class": "",
                 "id": ""
             },
-            "field_group_key": "group_640858450ab54",
-            "layout": "block",
-            "repeatable": 0,
-            "button_label": "Add Row",
-            "appearances": [
-                "hide-outer-boundary"
-            ],
-            "min": 0,
-            "max": 0,
-            "rows_per_page": 20,
-            "collapsed": "",
-            "sub_fields": []
+            "choices": {
+                "white": "<span class=\"white\">White<\/span>",
+                "transparent": "<span class=\"transparent\">Transparent<\/span>",
+                "light": "<span class=\"light\">Light<\/span>",
+                "dark": "<span class=\"dark\">Dark<\/span>",
+                "primary": "<span class=\"primary\">Primary<\/span>",
+                "secondary": "<span class=\"secondary\">Secondary<\/span>",
+                "accent": "<span class=\"accent\">Accent<\/span>"
+            },
+            "default_value": "white",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         }
     ],
     "location": [
@@ -62,16 +66,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "is_acf_component": 0,
-    "acf_component_defaults": {
-        "layout": "block",
-        "repeatable": "0",
-        "pagination": "0",
-        "rows_per_page": "20",
-        "min": "",
-        "max": "",
-        "button_label": "",
-        "appearances": ""
-    },
-    "modified": 1706428714
+    "modified": 1713749116
 }

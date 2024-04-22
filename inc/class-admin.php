@@ -42,18 +42,11 @@ class Doublee_Admin {
             $warnings[] = 'Advanced Editor Tools';
         }
 
-        if (is_plugin_active('breadcrumbs-doublee/breadcrumbs.php')) {
+        if (is_plugin_active('doublee-breadcrumbs/breadcrumbs.php')) {
             $successes[] = 'Double-E Breadcrumbs';
         }
         else {
             $warnings[] = 'Double-E Breadcrumbs';
-        }
-
-        if (is_plugin_active('advanced-custom-fields-component_field/index.php')) {
-            $successes[] = 'Advanced Custom Fields Component Field';
-        }
-        else {
-            $warnings[] = 'Advanced Custom Fields Component Field';
         }
 
         return array(

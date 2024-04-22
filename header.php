@@ -9,5 +9,9 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
+    <?php wp_body_open(); ?>
+    <a class="skip-link screen-reader-text" href="#page"><?php esc_html_e('Skip to content', 'starterkit'); ?></a>
+    <div id="page" class="site">
+    <?php get_template_part('components/layout/header/header'); ?>
+
 

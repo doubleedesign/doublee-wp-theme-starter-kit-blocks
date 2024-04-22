@@ -76,12 +76,12 @@ class Doublee_Block_Utils {
 				));
 			}
 			// TODO: Make this generic
-			else if (isset($block['blockName']) && file_exists(RUPERTSWOOD_PLUGIN_PATH . '/blocks/' . str_replace('custom/', '', $block['blockName']) . '/index.php')) {
+			else if (isset($block['blockName']) && file_exists(DOUBLEE_PLUGIN_PATH . '/blocks/' . str_replace('custom/', '', $block['blockName']) . '/index.php')) {
 				$args = array(
 					'block' => $block,
 					'args'  => array_merge($args, array('position' => $count))
 				);
-				include(RUPERTSWOOD_PLUGIN_PATH . '/blocks/' . str_replace('custom/', '', $block['blockName']) . '/index.php');
+				include(DOUBLEE_PLUGIN_PATH . '/blocks/' . str_replace('custom/', '', $block['blockName']) . '/index.php');
 			}
 			else {
 				echo render_block($block);
