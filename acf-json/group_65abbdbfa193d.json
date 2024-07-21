@@ -66,13 +66,34 @@
                 "value": "doublee\/media-text"
             }
         ],
-	    [
-		    {
-			    "param": "block",
-			    "operator": "==",
-			    "value": "doublee\/upcoming-events"
-		    }
-	    ]
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "doublee\/upcoming-events"
+            }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "doublee\/downloads-section"
+            }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "doublee\/page-header"
+            }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "doublee\/image-grid"
+            }
+        ]
     ],
     "menu_order": -11,
     "position": "normal",
@@ -83,16 +104,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "is_acf_component": 0,
-    "acf_component_defaults": {
-        "layout": "block",
-        "repeatable": "0",
-        "pagination": "0",
-        "rows_per_page": "20",
-        "min": "",
-        "max": "",
-        "button_label": "",
-        "appearances": ""
-    },
-    "modified": 1706417126
+    "modified": 1721546870
 }

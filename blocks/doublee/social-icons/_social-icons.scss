@@ -1,0 +1,18 @@
+.block .block.wp-block-social-icons {
+	margin-bottom: 1rem;
+
+	.social-icons {
+		margin: 0;
+		padding: 0;
+		display: flex;
+
+		&__item {
+			display: block;
+			margin-inline-end: 0.5rem;
+
+			&__link {
+				font-size: 1.4rem;
+			}
+		}
+	}
+}

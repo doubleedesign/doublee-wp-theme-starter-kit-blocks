@@ -17,19 +17,19 @@
                 "id": ""
             },
             "choices": {
-                "white": "<span class=\"white\">White<\/span>",
-                "transparent": "<span class=\"transparent\">Transparent<\/span>",
-                "light": "<span class=\"light\">Light<\/span>",
-                "dark": "<span class=\"dark\">Dark<\/span>",
-                "primary": "<span class=\"primary\">Primary<\/span>",
-                "secondary": "<span class=\"secondary\">Secondary<\/span>",
-                "accent": "<span class=\"accent\">Accent<\/span>"
+                "white": "white",
+                "transparent": "transparent",
+                "light": "light",
+                "dark": "dark",
+                "primary": "primary",
+                "secondary": "secondary",
+                "accent": "accent"
             },
             "default_value": "white",
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
-            "ui": 0,
+            "ui": 1,
             "ajax": 0,
             "placeholder": ""
         }
@@ -66,5 +66,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1713749116
+    "modified": 1721529717
 }
