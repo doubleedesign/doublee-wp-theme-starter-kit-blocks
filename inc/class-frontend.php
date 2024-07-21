@@ -4,6 +4,7 @@ class Doublee_Frontend {
 
 	public function __construct() {
 		add_action('wp_enqueue_scripts', [$this, 'enqueue_frontend']);
+        add_action('wp_head', [$this, 'set_icon_from_acf_field']);
 	}
 
 
@@ -111,4 +112,12 @@ class Doublee_Frontend {
 		return wpautop(apply_filters('wp_trim_excerpt', $excerpt));
 	}
 
+    function set_icon_from_acf_field(): void {
+        $favicon_id = get_field('favicon', 'option');
+        if ($favicon_id) {
+            $favicon_url = wp_get_attachment_url($favicon_id);
+            echo '<link rel="icon" href="' . esc_url($favicon_url) . '" type="image/x-icon">';
+            echo '<link rel="shortcut icon" href="' . esc_url($favicon_url) . '" type="image/x-icon">';
+        }
+    }
 }
