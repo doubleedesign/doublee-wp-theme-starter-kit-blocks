@@ -38,4 +38,14 @@ document.addEventListener('DOMContentLoaded', async function() {
 			});
 		}
 	});
+
+	// Open list view by default
+	wp.domReady(() => {
+		const { select, dispatch } = wp.data;
+		const listViewIsOpen = select('core/editor').isListViewOpened();
+
+		if (!listViewIsOpen) {
+			dispatch('core/editor').setIsListViewOpened(true);
+		}
+	});
 });

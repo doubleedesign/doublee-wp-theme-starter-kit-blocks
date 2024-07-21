@@ -18,6 +18,14 @@ class Doublee_Block_Editor {
 		add_filter('block_categories_all', [$this, 'customise_block_categories']);
 		add_action('init', [$this, 'allowed_block_patterns'], 10, 2);
 		add_filter('should_load_remote_block_patterns', '__return_false');
+        remove_action(
+            'enqueue_block_editor_assets',
+            'wp_enqueue_editor_block_directory_assets'
+        );
+        remove_action(
+            'enqueue_block_editor_assets',
+            'gutenberg_enqueue_block_editor_assets_block_directory'
+        );
 		add_action('after_setup_theme', [$this, 'disable_block_template_editor']);
 		add_filter('block_editor_settings_all', [$this, 'disable_block_code_editor'], 10, 2);
 		add_action('enqueue_block_editor_assets', [$this, 'block_editor_scripts'], 100);
@@ -257,6 +265,15 @@ class Doublee_Block_Editor {
 			THEME_FOUNDATION_VERSION,
 			false
 		);
+
+        wp_enqueue_script(
+            'open-list-view',
+            get_stylesheet_directory_uri() . '/path-to-your-js-file/open-list-view.js',
+            array( 'wp-edit-post', 'wp-data', 'wp-dom-ready' ),
+            null,
+            true
+        );
+
         // Extra controls for Cover block
         wp_enqueue_script(
             'custom-cover-block',
@@ -269,11 +286,20 @@ class Doublee_Block_Editor {
 
 
 	/**
-	 * Script to hackily remove menu items (e.g., the disabled code editor button) for simplicity
+	 * Script to hackily remove menu items (e.g., the disabled code editor button) for simplicity,
+     * open list view by default, and other editor UX things like that
+     *
 	 * @return void
 	 */
 	function admin_scripts(): void {
-		wp_enqueue_script('doublee-admin-js', get_template_directory_uri() . '/common/js/admin-hacks.js');
+		wp_enqueue_script(
+            'doublee-admin-js',
+            get_template_directory_uri() .
+            '/common/js/admin-hacks.js',
+            array('wp-edit-post', 'wp-data', 'wp-dom-ready'),
+            THEME_FOUNDATION_VERSION,
+            true
+        );
 	}
 
 
