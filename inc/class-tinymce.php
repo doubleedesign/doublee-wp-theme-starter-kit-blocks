@@ -9,6 +9,7 @@ class Doublee_TinyMCE {
 		add_filter('tiny_mce_plugins', [$this, 'remove_custom_colours']);
 		add_filter('mce_buttons', [$this, 'remove_buttons']);
 		add_filter('mce_buttons', [$this, 'add_styleselect']);
+        add_filter('tiny_mce_before_init', [$this, 'editor_css_acf']);
 	}
 
 
@@ -142,6 +143,16 @@ class Doublee_TinyMCE {
 				'block'   => 'p',
 				'classes' => 'is-style-lead'
 			),
+            array(
+                'title'   => 'Accent font heading',
+                'block'   => 'h2',
+                'classes' => 'is-style-accent'
+            ),
+            array(
+                'title'   => 'Small text heading',
+                'block'   => 'h2',
+                'classes' => 'is-style-small'
+            ),
 			array(
 				'title'      => 'Button (primary)',
 				'selector'   => 'a',
@@ -185,4 +196,27 @@ class Doublee_TinyMCE {
 
 		return $settings;
 	}
+
+    /**
+     * Load editor styles in ACF WYSIWYG fields
+     * Ref: https://pagegwood.com/web-development/custom-editor-stylesheets-advanced-custom-fields-wysiwyg/
+     *
+     * @param $mce_init
+     *
+     * @wp-hook
+     *
+     * @return array
+     */
+    function editor_css_acf($mce_init): array {
+        $content_css = '/styles-tinymce.css';
+        $version = filemtime(get_stylesheet_directory() . $content_css);
+        $content_css = get_stylesheet_directory_uri() . $content_css . '?v=' . $version; // it caches hard, use this to force a refresh
+
+        if(isset($mce_init['content_css'])) {
+            $content_css_new = $mce_init['content_css'] . ',' . $content_css;
+            $mce_init['content_css'] = $content_css_new;
+        }
+
+        return $mce_init;
+    }
 }
