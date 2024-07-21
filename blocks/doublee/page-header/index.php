@@ -31,7 +31,7 @@ if (is_home()) {
 }
 
 if (isset($block) || isset($args['block'])) {
-    do_action('doublee_block_layout_start', $is_editor ? $block : $args['block'], $is_editor ? 'editor' : 'frontend');
+    do_action('doublee_block_layout_start', $is_editor ? $block : $args['block'], $is_editor ? 'editor' : 'frontend', $args['args']['parent'] ?? null);
     do_action('doublee_breadcrumbs'); ?>
     <h1><?php echo $title; ?></h1>
     <?php

@@ -25,7 +25,7 @@ $custom_classes = Doublee_Block_Utils::get_custom_classes($is_editor ? $block : 
 $block_classes = array_merge($bg_classes, $custom_classes);
 ?>
 
-<section class="block block__copy block--innerblock <?php echo implode(' ', $block_classes); ?>">
+<section class="block wp-block-copy-inner block--innerblock <?php echo implode(' ', $block_classes); ?>">
     <div class="entry-content">
         <?php
         if ($is_editor) { ?>

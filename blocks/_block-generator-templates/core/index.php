@@ -5,7 +5,6 @@ if (!isset($args['block'])) {
 }
 
 // do_action('doublee_block_layout_start', $args['block'], 'frontend'); // remove the block__template-name div below if using this ?>
-<div class="block block__template-name">
     <?php
     // Pick your poison:
     // render_block is useful for things like embeds that I want to let the built-in rendering take care of
@@ -16,5 +15,4 @@ if (!isset($args['block'])) {
     //        Doublee_Block_Utils::output_custom_blocks($args['block']['innerBlocks'], $args['args']);
     //    }
     ?>
-</div>
 <?php // do_action('doublee_block_layout_end'); ?>

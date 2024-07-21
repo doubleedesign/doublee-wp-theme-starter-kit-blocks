@@ -1,4 +1,12 @@
-.block__cover {
+.wp-block-cover {
 	padding-top: 0;
 	padding-bottom: 0;
+
+	&__image-background {
+		.is-style-contained-image-lg & {
+			@include media-breakpoint-up(lg) {
+				object-fit: contain;
+			}
+		}
+	}
 }

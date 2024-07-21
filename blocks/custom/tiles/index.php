@@ -23,12 +23,10 @@ $rows_of_tiles = $args['block']['attrs']['rowCount'] ?? ceil($tiles_count / 2);
 $row_count = $rows_of_tiles + $headings_count;
 $col_count = ceil($tiles_count / $row_count);
 ?>
-<div class="block block__tiles">
-    <div class="wp-block-tiles" data-ideal-row-count="<?php echo $row_count; ?>"
-         data-ideal-col-count="<?php echo $col_count; ?>"
-    >
-		<?php if (isset($args['block']['innerBlocks'])) {
-			Doublee_Block_Utils::output_custom_blocks($args['block']['innerBlocks'], $args['args']);
-		} ?>
-    </div>
+<div class="wp-block-tiles" data-ideal-row-count="<?php echo $row_count; ?>"
+     data-ideal-col-count="<?php echo $col_count; ?>"
+>
+    <?php if (isset($args['block']['innerBlocks'])) {
+        Doublee_Block_Utils::output_custom_blocks($args['block']['innerBlocks'], $args['args']);
+    } ?>
 </div>

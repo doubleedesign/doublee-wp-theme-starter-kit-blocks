@@ -41,9 +41,9 @@ if (!function_exists('get_section_pages')) {
 
 $section = get_section_pages($post->ID);
 if (!empty($section['children'])) {
-    do_action('doublee_block_layout_start', $is_editor ? $block : $args['block'], $is_editor ? 'editor' : 'frontend');
+    do_action('doublee_block_layout_start', $is_editor ? $block : $args['block'], $is_editor ? 'editor' : 'frontend', $args['args']['parent'] ?? null);
     if (!$is_editor) { ?>
-        <div class="block__in-this-section__header row row--inner">
+        <div class="wp-block-in-this-section__header row row--inner">
             <div class="col-12">
                 <h2>
                     <a href="<?php echo get_the_permalink($section['id']); ?>"><?php echo get_the_title($section['id']); ?></a>
@@ -51,7 +51,7 @@ if (!empty($section['children'])) {
             </div>
         </div>
     <?php } ?>
-    <ul class="block__in-this-section__content row row--inner">
+    <ul class="wp-block-in-this-section__content row row--inner">
         <?php if ($is_editor && $post->post_type === 'shared_content') { ?>
             <div class="alert alert--warning">
                 <p>Can't preview a section of pages from shared content configuration. Please visit a page with
@@ -59,7 +59,7 @@ if (!empty($section['children'])) {
             </div>
         <?php } ?>
         <?php foreach ($section['children'] as $child) { ?>
-            <div class="block__in-this-section__content__item card-wrapper col-12 col-md-6 col-xl-4">
+            <div class="wp-block-in-this-section__content__item card-wrapper col-12 col-md-6 col-xl-4">
                 <?php get_template_part('template-parts/card', '', array(
                     'card' => new Card($child['id'], false, true, true, 'horizontal', 'View page', $child['children'],)
                 )); ?>

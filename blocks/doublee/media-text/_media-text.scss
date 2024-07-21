@@ -1,4 +1,9 @@
-.block__media-text {
+section.wp-block-media-text {
+	display: block;
+
+	> .row > .entry-content {
+		padding: 0 !important;
+	}
 
 	.wp-block-media-text {
 

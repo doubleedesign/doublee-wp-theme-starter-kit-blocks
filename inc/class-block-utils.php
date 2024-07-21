@@ -3,29 +3,42 @@
 class Doublee_Block_Utils {
 
 	public function __construct() {
-		add_action('doublee_block_layout_start', [$this, 'block_layout_start'], 10, 2);
+		add_action('doublee_block_layout_start', [$this, 'block_layout_start'], 10, 3);
 		add_action('doublee_block_layout_end', [$this, 'block_layout_end'], 10, 2);
 	}
 
 
 	/**
 	 * Outputs the opening tags for a top-level ACF-driven custom block
-	 * Usage: do_action('doublee_block_layout_start', $block, $context)
+	 * Usage: do_action('doublee_block_layout_start', $block, $context, $parent)
 	 * @param $block
 	 * @param $context - editor or frontend
+     * @param $parent - parent block name if applicable
 	 *
 	 * @return void
 	 */
-	function block_layout_start($block, $context): void {
+	function block_layout_start($block, $context, $parent): void {
 		$name = self::get_short_name($block, $context);
 		if (!empty($name)) {
 			$section_classes = self::get_section_classes($block, $context);
-			$row_classes = self::get_row_classes($block, $context);
+			$row_classes = self::get_row_classes($block, $context, $parent);
 			$column_classes = self::get_column_classes($block, $context);
 
-			$output = '<section class="block block__' . $name . ' ' . implode(' ', $section_classes) . '">';
-			$output .= '<div class="' . implode(' ', $row_classes) . '">';
-			$output .= '<div class="' . implode(' ', $column_classes) . '">';
+            if ($name === 'call-to-action' && self::get_acf_field_for_block('partly_overlay_previous_block', $block, $context)) {
+                $section_classes[] = 'is-with-previous';
+            }
+
+            $output = '<section class="' . implode(' ', $section_classes) . '">';
+            $output .= '<div class="' . implode(' ', $row_classes) . '">';
+
+            if ($parent === 'doublee/columns') {
+                // This is just so I don't have to pass the parent to block_layout_end to adjust how many elements there are to close
+                // CSS display:contents makes it functionally ignored, layout-wise
+                $output .= '<div class="doublee-columns-inner-wrapper">';
+            }
+            else {
+                $output .= '<div class="' . implode(' ', $column_classes) . '">';
+            }
 		}
 		else {
 			$output = '<section class="block">';
@@ -98,9 +111,9 @@ class Doublee_Block_Utils {
 	 * @param $block
 	 * @param $context
 	 *
-	 * @return string | bool | null
+	 * @return string | bool | null | array
 	 */
-	static function get_acf_field_for_block($field, $block, $context): bool|string|null {
+	static function get_acf_field_for_block($field, $block, $context): bool|string|null|array {
 		$value = null;
 		if ($context === 'editor') {
 			$data = $block;
@@ -248,8 +261,9 @@ class Doublee_Block_Utils {
 		$name = self::get_short_name($block, $context);
 		// TODO: Sponsors is from a client plugin, this needs to be made generic so it can find this for any client plugin's custom blocks
 		$always_fullwidth_bg = ['page-header', 'in-this-section', 'latest-posts', 'sponsors'];
-		$block_classes = self::get_custom_classes($block, $context);
-		$block_classes = array_merge($block_classes, self::get_background_classes($block));
+		$block_classes = array('block', "wp-block-$name");
+		$block_classes = array_merge($block_classes, self::get_custom_classes($block, $context), self::get_background_classes($block));
+
 		if (in_array($name, $always_fullwidth_bg) || self::get_acf_field_for_block('full_width_background', $block, $context)) {
 			$block_classes[] = 'has-fullwidth-background';
 		}
@@ -265,10 +279,16 @@ class Doublee_Block_Utils {
 	 * Get the classes for the direct .row child element(s) of a block
 	 * @param $block
 	 * @param $context
+     * @param $parent
 	 *
 	 * @return array
 	 */
-	static function get_row_classes($block, $context): array {
+	static function get_row_classes($block, $context, $parent): array {
+        $name = self::get_short_name($block, $context);
+        if($name === 'social-icons' || $name === 'contact-details') {
+            return [];
+        }
+
 		$block_row_classes = ['row'];
 		$width = self::get_block_width($block, $context);
 		if ($width == 'fullwidth') {
@@ -277,6 +297,10 @@ class Doublee_Block_Utils {
 		else if ($width == 'wide') {
 			$block_row_classes[] = 'row--wide';
 		}
+
+        if($parent === 'doublee/columns') {
+            $block_row_classes[] = 'row--inner';
+        }
 
 		$fullwidth_bg = self::get_acf_field_for_block('full_width_background', $block, $context);
 		if (!$fullwidth_bg) {
@@ -305,6 +329,11 @@ class Doublee_Block_Utils {
 			error_log('get_width_classes called with unsupported context ' . $context);
 		}
 
+        $name = self::get_short_name($block, $context);
+        if($name === 'social-icons' || $name === 'contact-details') {
+            return ['entry-content'];
+        }
+
 		$column_classes = ['entry-content col-12'];
 
 		if (isset($data['className']) && self::get_block_width($block, $context) == 'narrow') {
@@ -328,8 +357,9 @@ class Doublee_Block_Utils {
 	 */
 	static function get_inner_content_classes($block, $context): array {
 		$inner_classes = [];
-		$inner_background = self::get_acf_field_for_block('inner_content_background_0_background_colour', $block, $context);
-		if ($inner_background) {
+		$inner_background = self::get_acf_field_for_block('inner_content_background', $block, $context);
+        // $inner_background = self::get_acf_field_for_block('inner_content_background_0_background_colour', $block, $context);
+        if ($inner_background) {
 			$inner_classes[] = 'has-' . $inner_background . '-background-color';
 		}
 

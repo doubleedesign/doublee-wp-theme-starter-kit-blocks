@@ -68,13 +68,12 @@ class Doublee_Block_Editor {
 					'backgroundColor' => 'primary'
 				),
 			),
-			// Unlocked contents
 			array(
 				'core/group',
 				array(
 					'lock'         => array(
 						'move'   => true,
-						'remove' => false,
+						'remove' => true,
 					),
 					'templateLock' => false
 				),
@@ -139,7 +138,8 @@ class Doublee_Block_Editor {
 	function allowed_blocks($allowed_block_types, $block_editor_context): array {
 		$all_block_types = WP_Block_Type_Registry::get_instance()->get_all_registered();
 		// Custom block types added to my forked Gutenberg editor plugin or site-specific plugin. Don't know why filtering $all_block_types doesn't work here
-		$in_plugin = array('custom/tiles', 'custom/tile', 'custom/sponsors');
+		//$in_plugin = array('custom/tiles', 'custom/tile', 'custom/sponsors');
+        $in_plugin = [];
 		// Custom block types registered in this parent theme
 		$custom = array_filter($all_block_types, fn($block_type) => str_starts_with($block_type->name, 'doublee/'));
 		$shared = array_filter($all_block_types, fn($block_type) => str_starts_with($block_type->name, 'doublee-shared/'));
@@ -237,7 +237,6 @@ class Doublee_Block_Editor {
 	 * @return void
 	 */
 	function block_editor_scripts(): void {
-		//wp_enqueue_script('evatt-block-editor-js', get_template_directory_uri() . '/js/dist/editor.bundle.js',
 		wp_enqueue_script('doublee-block-editor-js', get_template_directory_uri() . '/blocks/blocks.js',
 			array(
 				'wp-dom',
@@ -258,6 +257,14 @@ class Doublee_Block_Editor {
 			THEME_FOUNDATION_VERSION,
 			false
 		);
+        // Extra controls for Cover block
+        wp_enqueue_script(
+            'custom-cover-block',
+            get_template_directory_uri() . '/blocks/core/cover/cover.js',
+            array('wp-blocks', 'wp-element', 'wp-edit-post'),
+            THEME_FOUNDATION_VERSION,
+            false
+        );
 	}
 
 

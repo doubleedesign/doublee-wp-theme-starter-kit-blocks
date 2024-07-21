@@ -15,9 +15,9 @@ if ($is_editor && isset($block)) {
 	}
 }
 
-do_action('doublee_block_layout_start', $is_editor ? $block : $args['block'], $is_editor ? 'editor' : 'frontend');
+do_action('doublee_block_layout_start', $is_editor ? $block : $args['block'], $is_editor ? 'editor' : 'frontend', $args['args']['parent'] ?? null);
 ?>
-<header class="block__header">
+<header class="pseudo-block__header">
     <h2>Upcoming Events</h2>
 </header>
 <?php

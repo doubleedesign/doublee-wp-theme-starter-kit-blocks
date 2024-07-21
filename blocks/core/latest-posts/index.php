@@ -5,8 +5,8 @@ if (!isset($args['block'])) {
 }
 ?>
 
-<?php do_action('doublee_block_layout_start', $args['block'], 'frontend'); ?>
-<header class="block__header">
+<?php do_action('doublee_block_layout_start', $args['block'], 'frontend', $args['args']['parent'] ?? null); ?>
+<header class="pseudo-block__header">
     <h2>Latest News</h2>
 </header>
 <?php

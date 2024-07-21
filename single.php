@@ -6,7 +6,7 @@ Doublee_Block_Utils::output_custom_blocks($blocks, array(
     'parent' => 'archive'
 ));
 ?>
-    <section class="single-post-section pseudo-block block__copy">
+    <section class="single-post-section pseudo-block wp-block-copy">
         <div class="row">
             <div class="entry-content col-xs-12 col-lg-10 col-xl-9">
                 <?php if (has_post_thumbnail()) { ?>

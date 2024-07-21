@@ -1,0 +1,8 @@
+.wp-block-call-to-action {
+
+	&.is-with-previous {
+		position: relative;
+		z-index: 10;
+		margin-top: -4rem; // TODO: Add options for different amounts
+	}
+}

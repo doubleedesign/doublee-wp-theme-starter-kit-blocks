@@ -1,0 +1,13 @@
+.block .block.wp-block-contact-details {
+	padding: 1rem 0 0.5rem 1rem;
+	margin-bottom: 1rem;
+
+	.address {
+		&__row {
+
+			&__icon {
+				transform: translateY(0.25rem);
+			}
+		}
+	}
+}

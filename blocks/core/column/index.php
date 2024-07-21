@@ -18,7 +18,7 @@ else {
 
 $block_classes = array_merge(Doublee_Block_Utils::get_background_classes($args['block']), Doublee_Block_Utils::get_custom_classes($args['block'], 'frontend'));
 ?>
-<div class="block block__column block--innerblock col <?php echo implode(' ', $block_classes); ?>"
+<div class="block wp-block-column block--innerblock col <?php echo implode(' ', $block_classes); ?>"
      style="<?php foreach ($inline_style as $property => $value) {
          echo "$property:$value;";
      } ?>">

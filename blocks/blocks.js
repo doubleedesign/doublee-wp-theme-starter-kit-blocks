@@ -1,5 +1,5 @@
 /* global wp */
-// See /cms/class-block-editor.php for where the compiled version of this script is loaded;
+// See /inc/class-block-editor.php for where the compiled version of this script is loaded;
 // and the dependencies that may need to be added to ensure future modifications work
 import lodash from 'https://cdn.jsdelivr.net/npm/lodash@4.17.21/+esm';
 
@@ -24,7 +24,7 @@ wp.domReady(() => {
 
 function allowSomeBlocksOnlyOncePerPage() {
 	wp.hooks.addFilter('blocks.registerBlockType', 'doublee/allow-some-blocks-only-once-per-page', function(settings, name) {
-		if (['doublee/page-header'].includes(name)) {
+		if (['doublee/page-header', 'core/group'].includes(name)) {
 			settings.supports.multiple = false;
 		}
 
@@ -90,6 +90,15 @@ function addCoreBlockCustomStyles() {
 		label: 'Lead',
 	});
 
+	wp.blocks.registerBlockStyle('core/heading', {
+		name: 'accent',
+		label: 'Accent font',
+	});
+	wp.blocks.registerBlockStyle('core/heading', {
+		name: 'small',
+		label: 'Small text',
+	});
+
 	wp.blocks.registerBlockStyle('core/latest-posts', {
 		name: 'narrow',
 		label: 'Narrow',
@@ -97,6 +106,28 @@ function addCoreBlockCustomStyles() {
 	wp.blocks.registerBlockStyle('core/latest-posts', {
 		name: 'wide',
 		label: 'Wide',
+	});
+
+	wp.blocks.registerBlockStyle('core/cover', {
+		name: 'narrow',
+		label: 'Narrow',
+	});
+	wp.blocks.registerBlockStyle('core/cover', {
+		name: 'wide',
+		label: 'Wide',
+	});
+	wp.blocks.registerBlockStyle('core/cover', {
+		name: 'fullwidth',
+		label: 'Full-width',
+	});
+
+	wp.blocks.registerBlockStyle('core/columns', {
+		name: 'images-only',
+		label: 'Images only',
+	});
+	wp.blocks.registerBlockStyle('core/columns', {
+		name: 'logos-only',
+		label: 'Logos only',
 	});
 }
 
@@ -133,6 +164,7 @@ function unregisterSomeCoreStylesAndVariations() {
 		wp.blocks.unregisterBlockStyle('core/image', 'rounded');
 		wp.blocks.unregisterBlockVariation('core/group', 'group-row');
 		wp.blocks.unregisterBlockVariation('core/group', 'group-stack');
+		wp.blocks.unregisterBlockVariation('core/group', 'group-grid'); // TODO: Try to add support for this...it currently doesn't seem to have any settings or anything though...
 
 		(['wordpress', 'soundcloud', 'spotify', 'slideshare', 'twitter', 'flickr', 'animoto', 'cloudup', 'crowdsignal', 'dailymotion', 'imgur', 'issuu', 'kickstarter', 'mixcloud', 'pocket-casts', 'reddit', 'reverbnation', 'screencast', 'scribd', 'smugmug', 'speaker-deck', 'ted', 'tumblr', 'videopress', 'amazon-kindle', 'wolfram-cloud', 'pinterest', 'wordpress-tv']).forEach((embed) => {
 			wp.blocks.unregisterBlockVariation('core/embed', embed);
@@ -195,6 +227,11 @@ function customiseCoreBlockAttributes() {
 					type: 'flow',
 				},
 			};
+		}
+
+		if (name === 'core/cover') {
+			// Disable "Inner blocks use content width" setting
+			settings.supports = omit(settings.supports, ['layout']);
 		}
 
 		if (name === 'core/latest-posts') {

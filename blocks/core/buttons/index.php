@@ -4,9 +4,9 @@ if (!isset($args['block'])) {
 	return;
 } ?>
 <div class="wp-block-buttons <?php echo $args['block']['attrs']['className']; ?>
-            is-content-justification-<?php echo $args['block']['attrs']['layout']['justifyContent']; ?>
-            is-layout-<?php echo $args['block']['attrs']['layout']['type']; ?>
-            wp-block-buttons-is-layout-<?php echo $args['block']['attrs']['layout']['type']; ?>"
+            is-content-justification-<?php echo $args['block']['attrs']['layout']['justifyContent'] ?? 'left'; ?>
+            is-layout-<?php echo $args['block']['attrs']['layout']['type'] ?? 'flex'; ?>
+            wp-block-buttons-is-layout-<?php echo $args['block']['attrs']['layout']['type'] ?? 'flex'; ?>"
 >
 	<?php
 	if (isset($args['block']['innerBlocks'])) {

@@ -21,18 +21,18 @@ $default_blocks = array(
     array('core/heading', array(
         'level'       => 2,
         'placeholder' => 'Call to action heading',
-        'className'   => 'block__call-to-action__heading'
+        'className'   => 'wp-block-call-to-action__heading'
     )),
     array('core/paragraph', array(
         'placeholder' => 'Call to action paragraph',
-        'className'   => 'block__call-to-action__paragraph'
+        'className'   => 'wp-block-call-to-action__paragraph'
     )),
     array('core/buttons', array(
-        'className' => 'block__call-to-action__buttons'
+        'className' => 'wp-block-call-to-action__buttons'
     ))
 );
 
-do_action('doublee_block_layout_start', $is_editor ? $block : $args['block'], $is_editor ? 'editor' : 'frontend');
+do_action('doublee_block_layout_start', $is_editor ? $block : $args['block'], $is_editor ? 'editor' : 'frontend', $args['args']['parent'] ?? null);
 if ($is_editor) { ?>
     <InnerBlocks template="<?php echo esc_attr(wp_json_encode($default_blocks)); ?>"
                  allowedBlocks="<?php echo esc_attr(wp_json_encode($allowed_blocks)); ?>"></InnerBlocks>

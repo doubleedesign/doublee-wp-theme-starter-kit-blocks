@@ -4,13 +4,6 @@ if (!isset($args['block'])) {
 	return;
 }
 
-if (!isset($args['args']['parent']) || $args['args']['parent'] === 'core/group') {
-	?>
-    <section class="block block__cover">
-		<?php echo apply_filters('the_content', render_block($args['block'])); ?>
-    </section>
-<?php } else { ?>
-    <div class="block block__cover">
-		<?php echo apply_filters('the_content', render_block($args['block'])); ?>
-    </div>
-<?php }
+do_action('doublee_block_layout_start', $args['block'], 'frontend', $args['args']['parent'] ?? null);
+echo apply_filters('the_content', render_block($args['block']));
+do_action('doublee_block_layout_end');

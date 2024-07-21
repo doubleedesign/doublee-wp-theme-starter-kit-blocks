@@ -1,0 +1,19 @@
+.wp-block-image {
+	display: flex !important;
+
+	img {
+		max-width: 100%;
+	}
+
+	&.alignleft {
+		justify-content: flex-start;
+	}
+
+	&.aligncenter {
+		justify-content: center;
+	}
+
+	&.alignright {
+		justify-content: flex-end;
+	}
+}

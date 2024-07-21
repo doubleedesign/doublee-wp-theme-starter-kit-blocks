@@ -19,8 +19,7 @@ $default_blocks = array(
 	array('core/freeform', array())
 );
 
-do_action('doublee_block_layout_start', $is_editor ? $block : $args['block'], $is_editor ? 'editor' : 'frontend');
-
+do_action('doublee_block_layout_start', $is_editor ? $block : $args['block'], $is_editor ? 'editor' : 'frontend', null);
 if ($is_editor) { ?>
     <InnerBlocks template="<?php echo esc_attr(wp_json_encode($default_blocks)); ?>"
                  templateLock="true"></InnerBlocks>

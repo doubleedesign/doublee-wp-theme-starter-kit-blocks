@@ -1,21 +1,49 @@
-.block__columns {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
+.wp-block-columns {
+	gap: 0;
 
-	.row--inner {
+	&.row--inner {
+		max-width: 100% !important;
+	}
 
-		.block__column {
-			@include media-breakpoint-down(sm) {
-				width: 100% !important;
-				flex-basis: 100% !important;
-			}
+	.wp-block-column {
+		&:has(> .wp-block-image) {
+			padding: 0;
+		}
+
+		@include media-breakpoint-down(sm) {
+			width: 100% !important;
+			flex-basis: 100% !important;
 		}
 	}
 
-	.block__column {
-		&:has(> .block__image) {
-			padding: 0;
+	&.is-style-images-only {
+	}
+
+	&.is-style-logos-only {
+
+		.wp-block-column {
+			@include media-breakpoint-down(md) {
+				flex-grow: 0;
+				width: 33.33% !important;
+				flex-basis: 33.33% !important;
+			}
+		}
+
+		.wp-block-image {
+			padding: 0 map-get($spacing, 'md');
+
+			@include media-breakpoint-down(md) {
+				justify-content: center;
+			}
+
+			img {
+				@include media-breakpoint-down(md) {
+					max-height: 100px;
+					max-width: 225px;
+					width: 100%;
+					object-fit: contain !important;
+				}
+			}
 		}
 	}
 }
