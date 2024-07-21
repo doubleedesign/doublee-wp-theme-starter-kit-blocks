@@ -28,11 +28,11 @@ class Doublee_Admin {
             $errors[] = 'Advanced Custom Fields Pro';
         }
 
-        if (is_plugin_active('gutenberg-doublee/gutenberg.php')) {
-            $successes[] = 'Double-E Block Editor (customised)';
+        if (is_plugin_active('doublee-gutenberg/gutenberg.php')) {
+            $successes[] = 'Block Editor (customised by Double-E Design)';
         }
         else {
-            $warnings[] = 'Double-E Block Editor (customised)';
+            $warnings[] = 'Double-E Block Editor (customised by Double-E Design)';
         }
 
         if (is_plugin_active('tinymce-advanced/tinymce-advanced.php')) {
