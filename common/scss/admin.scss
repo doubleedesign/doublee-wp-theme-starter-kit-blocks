@@ -60,3 +60,10 @@ Also, block and TinyMCE content styles belong in editor.css
 		}
 	}
 }
+
+.block-editor-block-list__block {
+
+	.components-resizable-box__container {
+		max-width: 100% !important;
+	}
+}
