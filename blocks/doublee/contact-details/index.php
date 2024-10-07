@@ -12,5 +12,5 @@ $default_blocks = array(
 $allowed_blocks = [];
 
 do_action('doublee_block_layout_start', $is_editor ? $block : $args['block'], $is_editor ? 'editor' : 'frontend', $args['args']['parent'] ?? null);
-    echo Newport_Theme_Frontend_Utils::get_address('expanded');
+    echo Starterkit_Theme_Frontend_Utils::get_address('expanded');
 do_action('doublee_block_layout_end');
