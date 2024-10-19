@@ -12,7 +12,7 @@ if (!isset($args['block'])) {
     echo apply_filters('the_content', render_block($args['block']));
     // This is for core blocks that have inner blocks that I want full control over
     //    if (isset($args['block']['innerBlocks'])) {
-    //        Doublee_Block_Utils::output_custom_blocks($args['block']['innerBlocks'], $args['args']);
+    //        Starterkit_Block_Utils::output_custom_blocks($args['block']['innerBlocks'], $args['args']);
     //    }
     ?>
 <?php // do_action('doublee_block_layout_end'); ?>

@@ -16,7 +16,7 @@ else {
     );
 }
 
-$block_classes = array_merge(Doublee_Block_Utils::get_background_classes($args['block']), Doublee_Block_Utils::get_custom_classes($args['block'], 'frontend'));
+$block_classes = array_merge(Starterkit_Block_Utils::get_background_classes($args['block']), Starterkit_Block_Utils::get_custom_classes($args['block'], 'frontend'));
 ?>
 <div class="block wp-block-column block--innerblock col <?php echo implode(' ', $block_classes); ?>"
      style="<?php foreach ($inline_style as $property => $value) {
@@ -24,7 +24,7 @@ $block_classes = array_merge(Doublee_Block_Utils::get_background_classes($args['
      } ?>">
     <?php
     if (isset($args['block']['innerBlocks'])) {
-        Doublee_Block_Utils::output_custom_blocks($args['block']['innerBlocks'], array(
+        Starterkit_Block_Utils::output_custom_blocks($args['block']['innerBlocks'], array(
             'args'   => $args['args'],
             'parent' => 'core/column'
         ));

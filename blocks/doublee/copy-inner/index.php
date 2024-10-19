@@ -20,8 +20,8 @@ $default_blocks = array(
     array('core/freeform', array())
 );
 
-$bg_classes = Doublee_Block_Utils::get_background_classes($is_editor ? $block : $args['block'], $is_editor ? 'editor' : 'frontend');
-$custom_classes = Doublee_Block_Utils::get_custom_classes($is_editor ? $block : $args['block'], $is_editor ? 'editor' : 'frontend');
+$bg_classes = Starterkit_Block_Utils::get_background_classes($is_editor ? $block : $args['block'], $is_editor ? 'editor' : 'frontend');
+$custom_classes = Starterkit_Block_Utils::get_custom_classes($is_editor ? $block : $args['block'], $is_editor ? 'editor' : 'frontend');
 $block_classes = array_merge($bg_classes, $custom_classes);
 ?>
 
@@ -35,7 +35,7 @@ $block_classes = array_merge($bg_classes, $custom_classes);
         <?php
         if (!$is_editor && isset($args['block'])) {
             if ($args['block']['innerBlocks']) {
-                Doublee_Block_Utils::output_custom_blocks($args['block']['innerBlocks'], array(
+                Starterkit_Block_Utils::output_custom_blocks($args['block']['innerBlocks'], array(
                     'args'   => $args['args'],
                     'parent' => 'doublee/inner-copy'
                 ));

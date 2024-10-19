@@ -1,6 +1,6 @@
 <?php
 
-class Doublee_Block_Utils {
+class Starterkit_Block_Utils {
 
 	public function __construct() {
 		add_action('doublee_block_layout_start', [$this, 'block_layout_start'], 10, 3);

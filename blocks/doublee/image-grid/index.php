@@ -18,15 +18,15 @@ if ($is_editor) { ?>
 <?php }
 if (!$is_editor && isset($args['block'])) {
 	if ($args['block']['innerBlocks']) {
-		Doublee_Block_Utils::output_custom_blocks($args['block']['innerBlocks'], array(
+		Starterkit_Block_Utils::output_custom_blocks($args['block']['innerBlocks'], array(
 			'args'   => $args['args'],
 			'parent' => 'doublee/image-grid'
 		));
 	}
 }
 
-$intro_text = Doublee_Block_Utils::get_acf_field_for_block('intro_text', $is_editor ? $block : $args['block'], $is_editor ? 'editor' : 'frontend');
-$image_ids = Doublee_Block_Utils::get_acf_field_for_block('images', $is_editor ? $block : $args['block'], $is_editor ? 'editor' : 'frontend');
+$intro_text = Starterkit_Block_Utils::get_acf_field_for_block('intro_text', $is_editor ? $block : $args['block'], $is_editor ? 'editor' : 'frontend');
+$image_ids = Starterkit_Block_Utils::get_acf_field_for_block('images', $is_editor ? $block : $args['block'], $is_editor ? 'editor' : 'frontend');
 ?>
 
 <div class="wp-block-image-grid__intro row row--inner">

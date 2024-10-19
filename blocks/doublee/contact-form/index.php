@@ -23,7 +23,7 @@ do_action('doublee_block_layout_start', $is_editor ? $block : $args['block'], $i
         <?php }
         if (!$is_editor && isset($args['block'])) {
             if ($args['block']['innerBlocks']) {
-                Doublee_Block_Utils::output_custom_blocks($args['block']['innerBlocks'], array(
+                Starterkit_Block_Utils::output_custom_blocks($args['block']['innerBlocks'], array(
                     'args'   => $args['args'],
                     'parent' => 'doublee/contact-form'
                 ));
@@ -31,7 +31,7 @@ do_action('doublee_block_layout_start', $is_editor ? $block : $args['block'], $i
         } ?>
     </div>
     <div class="wp-block-contact-form__form col-12 col-lg-7">
-        <?php echo do_shortcode(Doublee_Block_Utils::get_acf_field_for_block('form_shortcode', $is_editor ? $block : $args['block'], $is_editor ? 'editor' : 'frontend')); ?>
+        <?php echo do_shortcode(Starterkit_Block_Utils::get_acf_field_for_block('form_shortcode', $is_editor ? $block : $args['block'], $is_editor ? 'editor' : 'frontend')); ?>
     </div>
 </div>
 <?php

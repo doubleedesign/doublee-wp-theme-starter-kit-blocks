@@ -21,7 +21,7 @@ do_action('doublee_block_layout_start', $is_editor ? $block : $args['block'], $i
     <h2>Upcoming Events</h2>
 </header>
 <?php
-$upcoming = Doublee_Events_Utils::get_upcoming_event_ids(3);
+$upcoming = Starterkit_Events_Utils::get_upcoming_event_ids(3);
 if ($upcoming) { ?>
     <div class="card-group-events">
 		<?php

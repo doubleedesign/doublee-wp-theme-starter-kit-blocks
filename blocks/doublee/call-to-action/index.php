@@ -39,7 +39,7 @@ if ($is_editor) { ?>
 <?php }
 if (!$is_editor && isset($args['block'])) {
     if ($args['block']['innerBlocks']) {
-        Doublee_Block_Utils::output_custom_blocks($args['block']['innerBlocks'], array(
+        Starterkit_Block_Utils::output_custom_blocks($args['block']['innerBlocks'], array(
             'args'   => $args['args'],
             'parent' => 'doublee/call-to-action'
         ));

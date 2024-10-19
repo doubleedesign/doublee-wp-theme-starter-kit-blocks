@@ -1,0 +1,15 @@
+{
+	"settings": {
+		"toolbar_1": "formatselect,styleselect,bold,italic,blockquote,bullist,numlist,alignleft,aligncenter,alignright,link,unlink,undo,redo",
+		"toolbar_2": "outdent,indent,pastetext,removeformat,charmap,wp_more,forecolor,table,wp_help",
+		"toolbar_3": "",
+		"toolbar_4": "",
+		"toolbar_classic_block": "formatselect,styleselect,bold,italic,blockquote,bullist,numlist,alignleft,aligncenter,alignright,link,wp_help",
+		"options": "merge_toolbars,advlist",
+		"plugins": "table,advlist"
+	},
+	"admin_settings": {
+		"options": "classic_paragraph_block,hybrid_mode,table_resize_bars,table_grid,table_tab_navigation,table_advtab",
+		"disabled_editors": "on_front_end"
+	}
+}

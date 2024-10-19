@@ -3,7 +3,7 @@
 /**
  * Customisations to block and block editor functionality/display.
  */
-class Doublee_Block_Editor {
+class Starterkit_Block_Editor {
 
 	public function __construct() {
 		if (!function_exists('register_block_type')) {
@@ -49,7 +49,7 @@ class Doublee_Block_Editor {
 				wp_register_script($block_name . '-editor-js',
 					get_template_directory_uri() . '/blocks/doublee/' . $block_name . '/editor.js',
 					array('wp-dom', 'wp-blocks', 'wp-element', 'wp-editor', 'wp-block-editor'),
-					THEME_FOUNDATION_VERSION
+					THEME_STARTERKIT_VERSION
 				);
 			}
 
@@ -262,7 +262,7 @@ class Doublee_Block_Editor {
 				'wp-block-editor',
 				'wp-block-library',
 			),
-			THEME_FOUNDATION_VERSION,
+			THEME_STARTERKIT_VERSION,
 			false
 		);
 
@@ -279,7 +279,7 @@ class Doublee_Block_Editor {
             'custom-cover-block',
             get_template_directory_uri() . '/blocks/core/cover/cover.js',
             array('wp-blocks', 'wp-element', 'wp-edit-post'),
-            THEME_FOUNDATION_VERSION,
+            THEME_STARTERKIT_VERSION,
             false
         );
 	}
@@ -297,7 +297,7 @@ class Doublee_Block_Editor {
             get_template_directory_uri() .
             '/common/js/admin-hacks.js',
             array('wp-edit-post', 'wp-data', 'wp-dom-ready'),
-            THEME_FOUNDATION_VERSION,
+            THEME_STARTERKIT_VERSION,
             true
         );
 	}
@@ -336,7 +336,7 @@ class Doublee_Block_Editor {
 	 * @return void
 	 */
 	function editor_css(): void {
-		wp_enqueue_style('doublee-editor-css', get_template_directory_uri() . '/assets/editor.css');
+		wp_enqueue_style('starterkit-editor-css', get_template_directory_uri() . '/styles-editor.css');
 	}
 
 }

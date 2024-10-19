@@ -17,7 +17,7 @@ $card = $args['card'];
                     <a href="<?php echo get_permalink($card->getPostId()); ?>"><?php echo get_the_title($card->getPostId()); ?></a>
                 </h3>
 				<?php if ($card->isWithExcerpt()) { ?>
-					<?php echo wpautop(Doublee_Frontend::get_custom_excerpt(get_the_excerpt($card->getPostId()), 25)); ?>
+					<?php echo wpautop(Starterkit_Theme_Frontend_Utils::get_custom_excerpt(get_the_excerpt($card->getPostId()), 25)); ?>
 				<?php } ?>
 				<?php if ($card->getExtraLinks()) { ?>
                     <ul class="card__inner__content__extra-links">

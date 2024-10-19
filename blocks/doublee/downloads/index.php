@@ -17,14 +17,14 @@ do_action('doublee_block_layout_start', $is_editor ? $block : $args['block'], $i
     <?php }
     if (!$is_editor && isset($args['block'])) {
         if ($args['block']['innerBlocks']) {
-            Doublee_Block_Utils::output_custom_blocks($args['block']['innerBlocks'], array(
+            Starterkit_Block_Utils::output_custom_blocks($args['block']['innerBlocks'], array(
                 'args'   => $args['args'],
                 'parent' => 'doublee/downloads'
             ));
         }
     }
 
-    $file_ids = Doublee_Block_Utils::get_acf_field_for_block('files', $is_editor ? $block : $args['block'], $is_editor ? 'editor' : 'frontend');
+    $file_ids = Starterkit_Block_Utils::get_acf_field_for_block('files', $is_editor ? $block : $args['block'], $is_editor ? 'editor' : 'frontend');
     if ($file_ids) {
         $files = array_map(fn($file_id) => array(
             'url' => wp_get_attachment_url($file_id),

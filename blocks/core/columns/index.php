@@ -6,7 +6,7 @@ if (!isset($args['block'])) {
 
 do_action('doublee_block_layout_start', $args['block'], 'frontend', $args['args']['parent'] ?? null);
 if (isset($args['block']['innerBlocks'])) {
-    Doublee_Block_Utils::output_custom_blocks($args['block']['innerBlocks'], array(
+    Starterkit_Block_Utils::output_custom_blocks($args['block']['innerBlocks'], array(
         'args'       => $args['args'],
         'parent'     => 'core/columns',
         'total_cols' => count($args['block']['innerBlocks'])

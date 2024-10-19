@@ -19,7 +19,7 @@ if ($is_editor) { ?>
 if (!$is_editor && isset($args['block'])) {
     do_action('doublee_block_layout_start', $is_editor ? $block : $args['block'], $is_editor ? 'editor' : 'frontend', $args['args']['parent'] ?? null);
     if ($args['block']['innerBlocks']) {
-        Doublee_Block_Utils::output_custom_blocks($args['block']['innerBlocks'], array(
+        Starterkit_Block_Utils::output_custom_blocks($args['block']['innerBlocks'], array(
             'args'   => $args['args'],
             'parent' => 'doublee/columns'
         ));

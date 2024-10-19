@@ -1,6 +1,6 @@
 <?php
 
-class Doublee_Shared_Content {
+class Starterkit_Shared_Content {
 
 	public function __construct() {
 		add_action('init', array($this, 'create_shared_content_cpt'));
