@@ -3,6 +3,8 @@
 	"apiVersion": 3,
 	"name": "doublee/columns-wrapper",
 	"title": "Multi-column panel",
+	"style": "file:./columns-wrapper.css",
+	"editorStyle": "file:./columns-wrapper.css",
 	"category": "page-layout",
 	"parent": ["core/group"],
 	"description": "",

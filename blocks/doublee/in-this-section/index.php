@@ -60,7 +60,7 @@ if (!empty($section['children'])) {
         <?php } ?>
         <?php foreach ($section['children'] as $child) { ?>
             <div class="wp-block-in-this-section__content__item card-wrapper col-12 col-md-6 col-xl-4">
-                <?php get_template_part('template-parts/card', '', array(
+                <?php get_template_part('components/cards/card', '', array(
                     'card' => new Card($child['id'], false, true, true, 'horizontal', 'View page', $child['children'],)
                 )); ?>
             </div>

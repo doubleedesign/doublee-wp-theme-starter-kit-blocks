@@ -4,7 +4,7 @@ Description:    Foundation for WordPress theme development by Double-E Design, u
 Author:         Leesa Ward
 Author URI:     https://www.doubleedesign.com.au
 Theme URI:      https://github.com/doubleedesign/doublee-wp-theme-starter-kit-blocks
-Version:        0.0.2
+Version:        2.0.0
 Text Domain:    starterkit
 */
 
@@ -13,6 +13,6 @@ Text Domain:    starterkit
 @import 'core/reset';
 @import 'core/mixins';
 @import 'core/grid/bootstrap-grid';
-@import '../../template-parts/*';
-@import '../../blocks/*';
-@import '../../blocks/**/*';
+@import '../../components/*';
+// Note: Block styles are loaded on a per-block basis, with co-located styles specified in each block.json
+// There is also a global.css file for shared block styles and core.css for native block overrides, which are loaded separately

@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <title><?php wp_title(); ?></title>
-	<?php wp_head(); ?>
+    <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-    <?php wp_body_open(); ?>
-    <a class="skip-link screen-reader-text" href="#page"><?php esc_html_e('Skip to content', 'starterkit'); ?></a>
-    <div id="page" class="site">
-    <?php get_template_part('components/layout/header/header'); ?>
+<?php wp_body_open(); ?>
 
+<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'starterkit'); ?></a>
 
+<?php
+get_template_part('components/site-header/site-header');

@@ -10,7 +10,8 @@ class Starterkit_Block_Editor {
 			// Block editor is not available.
 			return;
 		}
-
+        add_action('enqueue_block_assets', [$this, 'enqueue_shared_block_css']);
+        add_action('enqueue_block_editor_assets', [Starterkit_Theme_CMS_Utils::class, 'enqueue_custom_fonts']);
 		add_action('init', [$this, 'register_custom_blocks'], 10);
 		add_action('init', [$this, 'register_page_template'], 20);
 		add_action('init', [$this, 'register_shared_blocks'], 15);
@@ -32,8 +33,31 @@ class Starterkit_Block_Editor {
 		add_action('admin_enqueue_scripts', [$this, 'admin_scripts']);
 		add_filter('script_loader_tag', [$this, 'script_type_module'], 10, 3);
 		add_action('enqueue_block_editor_assets', [$this, 'disable_editor_fullscreen_mode']);
-		add_action('admin_enqueue_scripts', [$this, 'editor_css']);
 	}
+
+
+    /**
+     * Enqueue shared block CSS into the editor
+     * @return void
+     */
+    function enqueue_shared_block_css(): void {
+        $theme = wp_get_theme();
+        $version = $theme->get('Version');
+        $has_parent = $theme->parent();
+
+        wp_enqueue_style('starterkit-shared-block-styles', get_template_directory_uri() . '/blocks/global.css', array(), THEME_STARTERKIT_VERSION, 'all');
+        wp_enqueue_style('starterkit-core-block-style-overrides', get_template_directory_uri() . '/blocks/core/core.css', array(), THEME_STARTERKIT_VERSION, 'all');
+
+        if($has_parent) { // avoid loading twice if this theme is active, not a child theme
+            if (file_exists(get_stylesheet_directory() . '/blocks/global.css')) {
+                wp_enqueue_style('child-shared-block-styles', get_stylesheet_directory_uri() . '/blocks/global.css', array(), $version, 'all');
+            }
+
+            if (file_exists(get_stylesheet_directory() . '/blocks/core.css')) {
+                wp_enqueue_style('child-core-block-style-overrides', get_stylesheet_directory_uri() . '/blocks/core/core.css', array(), $version, 'all');
+            }
+        }
+    }
 
 
 	/**
@@ -328,15 +352,6 @@ class Starterkit_Block_Editor {
 	function disable_editor_fullscreen_mode(): void {
 		$script = "window.onload = function() { const isFullscreenMode = wp.data.select( 'core/edit-post' ).isFeatureActive( 'fullscreenMode' ); if ( isFullscreenMode ) { wp.data.dispatch( 'core/edit-post' ).toggleFeature( 'fullscreenMode' ); } }";
 		wp_add_inline_script('wp-blocks', $script);
-	}
-
-
-	/**
-	 * Enqueue editor CSS
-	 * @return void
-	 */
-	function editor_css(): void {
-		wp_enqueue_style('starterkit-editor-css', get_template_directory_uri() . '/styles-editor.css');
 	}
 
 }

@@ -1,0 +1,190 @@
+.site-header {
+	@include gutter-padding-top(0.5);
+	@include gutter-padding-bottom(0.5);
+	position: relative;
+	z-index: 200;
+	box-shadow: 0 0 0.5rem 0 black;
+	font-family: $body-font-family;
+
+	@include media-breakpoint-up(lg) {
+		height: rem(100px);
+	}
+
+	div[data-vue-component] {
+		height: 100%;
+	}
+
+	.row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@include media-breakpoint-up(lg) {
+			height: 100%;
+		}
+	}
+
+	&__menu-toggle {
+		display: flex;
+		justify-content: flex-end;
+		position: relative;
+		z-index: 200;
+
+		.btn {
+			font-size: map-get($font-sizes, 'md');
+			border: 0 !important;
+
+			&:before {
+				display: none;
+			}
+
+			&:hover, &:focus, &:active {
+				color: white !important;
+			}
+		}
+	}
+
+	&__logo {
+		max-width: rem(100px);
+
+		@include media-breakpoint-up(lg) {
+			max-width: rem(140px);
+			position: relative;
+			transform: translateY(-3rem);
+		}
+
+		@include media-breakpoint-up(xl) {
+			max-width: rem(160px);
+		}
+
+		a {
+			display: block !important;
+			width: 100%;
+			height: auto;
+			overflow: visible !important;
+		}
+
+		img,
+		svg {
+			display: block;
+			width: 100%;
+
+			@include media-breakpoint-up(lg) {
+				position: absolute;
+				top: 0;
+				left: 0;
+				padding: map-get($spacing, 'sm');
+			}
+		}
+
+
+		&__text {
+
+			@include media-breakpoint-up(md) {
+				text-align: center;
+			}
+
+			@include media-breakpoint-up(lg) {
+				text-align: left;
+			}
+
+			a {
+				display: block;
+				font-weight: map-get($font-weights, 'bold');
+				font-size: map-get($font-sizes, 'lg');
+				text-decoration-color: transparent;
+
+				@include hover-focus-active {
+					text-decoration-color: currentColor;
+				}
+			}
+		}
+	}
+
+	&__menu-main,
+	&__menu-overlay {
+
+		&__list {
+
+			&__item {
+				text-align: center;
+				padding: 0 map-get($spacing, 'md');
+				overflow: visible;
+
+				a {
+					overflow: visible;
+
+					svg {
+						transition: all 0.3s ease;
+						margin-left: 0.25rem;
+					}
+				}
+
+				a:not(.btn) {
+					font-weight: map-get($font-weights, 'bold');
+					text-transform: uppercase;
+					display: inline-block;
+					padding: map-get($spacing, 'md') 0;
+					text-decoration: none;
+
+					&:before {
+						height: 4px;
+						bottom: 0;
+					}
+				}
+
+				&--current-menu-item,
+				&--current-menu-parent {
+					a:not(.btn) {
+						color: color-contrast(map-get($colours, 'dark'));
+					}
+				}
+
+				&--external {
+					a {
+						overflow: visible !important;
+					}
+				}
+			}
+		}
+	}
+
+	&__menu-main {
+		&__list {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+
+			&__item {
+				font-size: map-get($font-sizes, 'xs');
+
+				@include media-breakpoint-up(xl) {
+					font-size: map-get($font-sizes, 'sm');
+				}
+			}
+		}
+	}
+
+	&__menu-overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 100;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&__list {
+
+			&__item {
+				font-size: map-get($font-sizes, 'md');
+
+				&:last-of-type:has(.btn) {
+					margin-top: map-get($spacing, 'lg');
+				}
+			}
+		}
+	}
+}

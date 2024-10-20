@@ -1,0 +1,18 @@
+<!-- XML schema describing built-in Vue components -->
+<!-- This is here purely to give PHPStorm an understanding of the Vue components when used outside a .vue file -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.1">
+    <!--Vue template tag-->
+    <xs:element name="template">
+        <xs:complexType>
+            <xs:sequence>
+                <!--Allow any child elements-->
+                <xs:any processContents="skip" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <!-- Allow any attributes starting with 'v-' -->
+            <!-- Gets around the syntax of v-slot:name not being valid as an XML attribute -->
+            <!-- Ensure to include xmlns:v-slot="../../../schema/blocks.xsd" on the parent component-->
+            <xs:anyAttribute/>
+            <xs:assert test="every $attr in @* satisfies contains(name($attr), 'v-')"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

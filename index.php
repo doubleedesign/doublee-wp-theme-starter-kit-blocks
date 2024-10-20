@@ -39,12 +39,12 @@ global $wp_query;
 			}
 		}
 		else {
-			get_template_part('template-parts/no-content');
+			get_template_part('components/no-content/no-content');
 		}
 		?>
     </section>
 <?php
 if (have_posts()) {
-	get_template_part('template-parts/pagination');
+	get_template_part('components/pagination/pagination');
 }
 get_footer();

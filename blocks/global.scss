@@ -1,0 +1,41 @@
+.block, .pseudo-block {
+	@include gutter-padding-top(2);
+	@include gutter-padding-bottom(2);
+}
+
+.block {
+
+	> .row {
+		justify-content: center;
+	}
+
+	&--innerblock {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	&[class*="-background-color"] {
+		.entry-content[class*="-background-color"]:not(.has-transparent-background-color) {
+			padding: map-get($spacing, 'lg');
+		}
+	}
+
+	&[class*="-gradient-background"] {
+		.entry-content {
+			padding: map-get($spacing, 'lg');
+		}
+	}
+
+	&.has-contained-background {
+		@include make-row();
+		margin: 0 auto;
+	}
+
+	.entry-content {
+		box-sizing: border-box;
+	}
+}
+
+.pseudo-block--404 {
+	text-align: center;
+}

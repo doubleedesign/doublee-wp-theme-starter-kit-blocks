@@ -26,7 +26,7 @@ if ($upcoming) { ?>
     <div class="card-group-events">
 		<?php
 		foreach ($upcoming as $event_id) {
-			get_template_part('template-parts/card-event', '', array('id' => $event_id));
+			get_template_part('components/cards/card-event', '', array('id' => $event_id));
 		} ?>
     </div>
 	<?php

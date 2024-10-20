@@ -1,0 +1,16 @@
+.block .block.wp-block-social-icons {
+  margin-bottom: 1rem;
+}
+.block .block.wp-block-social-icons .social-icons {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.block .block.wp-block-social-icons .social-icons__item {
+  display: block;
+  margin-inline-end: 0.5rem;
+}
+.block .block.wp-block-social-icons .social-icons__item__link {
+  font-size: 1.4rem;
+}
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL2Jsb2Nrcy9kb3VibGVlL3NvY2lhbC1pY29ucy9zb2NpYWwtaWNvbnMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBdUI7RUFDdEI7O0FBRUE7RUFDQztFQUNBO0VBQ0E7O0FBRUE7RUFDQztFQUNBOztBQUVBO0VBQ0MiLCJmaWxlIjoiLi4vYmxvY2tzL2RvdWJsZWUvc29jaWFsLWljb25zL3NvY2lhbC1pY29ucy5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYmxvY2sgLmJsb2NrLndwLWJsb2NrLXNvY2lhbC1pY29ucyB7XHJcblx0bWFyZ2luLWJvdHRvbTogMXJlbTtcclxuXHJcblx0LnNvY2lhbC1pY29ucyB7XHJcblx0XHRtYXJnaW46IDA7XHJcblx0XHRwYWRkaW5nOiAwO1xyXG5cdFx0ZGlzcGxheTogZmxleDtcclxuXHJcblx0XHQmX19pdGVtIHtcclxuXHRcdFx0ZGlzcGxheTogYmxvY2s7XHJcblx0XHRcdG1hcmdpbi1pbmxpbmUtZW5kOiAwLjVyZW07XHJcblxyXG5cdFx0XHQmX19saW5rIHtcclxuXHRcdFx0XHRmb250LXNpemU6IDEuNHJlbTtcclxuXHRcdFx0fVxyXG5cdFx0fVxyXG5cdH1cclxufVxyXG4iXX0= */

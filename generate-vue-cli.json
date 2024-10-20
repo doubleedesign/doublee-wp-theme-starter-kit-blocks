@@ -5,9 +5,9 @@
 			"withStyle": true,
 			"withJson": true,
 			"customTemplates": {
-				"component": "blocks/_block-generator-templates/doublee/index.php",
-				"json": "blocks/_block-generator-templates/doublee/block.json",
-				"style": "blocks/_block-generator-templates/_template-name.scss"
+				"component": "_block-generator-templates/doublee/index.php",
+				"json": "_block-generator-templates/doublee/block.json",
+				"style": "_block-generator-templates/_template-name.scss"
 			},
 			"withTest": false,
 			"withStory": false
@@ -17,8 +17,8 @@
 			"withStyle": true,
 			"withJson": false,
 			"customTemplates": {
-				"component": "blocks/_block-generator-templates/core/index.php",
-				"style": "blocks/_block-generator-templates/_template-name.scss"
+				"component": "_block-generator-templates/core/index.php",
+				"style": "_block-generator-templates/_template-name.scss"
 			}
 		},
 		"custom": {
@@ -26,8 +26,8 @@
 			"withStyle": true,
 			"withJson": false,
 			"customTemplates": {
-				"component": "blocks/_block-generator-templates/core/index.php",
-				"style": "blocks/_block-generator-templates/_template-name.scss"
+				"component": "_block-generator-templates/core/index.php",
+				"style": "_block-generator-templates/_template-name.scss"
 			}
 		}
 	}

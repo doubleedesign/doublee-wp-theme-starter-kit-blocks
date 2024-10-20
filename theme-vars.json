@@ -1,9 +1,56 @@
 {
+	"greys": {
+		"100": "#F8F9FA",
+		"200": "#E9ECEF",
+		"300": "#DEE2E6",
+		"400": "#CED4DA",
+		"500": "#ADB5BD",
+		"600": "#6C757D",
+		"700": "#495057",
+		"800": "#343A40",
+		"900": "#212529"
+	},
+	"colours": {
+		"primary": "#845ec2",
+		"secondary": "#00c9a7",
+		"accent": "#ba3caf",
+		"success": "#00c9a7",
+		"info": "#00d2fc",
+		"warning": "#00c9a7",
+		"alert": "#ff6f91",
+		"light": "#F0F0F2",
+		"dark": "#4b4453",
+		"white": "#FFF",
+		"black": "#000"
+	},
 	"min-contrast-ratio": "3",
 	"white": "#FFF",
 	"black": "#000",
 	"color-contrast-dark": "$black",
 	"color-contrast-light": "$white",
+	"font-sizes": {
+		"xs": "0.833rem",
+		"sm": "1rem",
+		"sm-md": "1.2rem",
+		"md": "1.44rem",
+		"lg": "1.728rem",
+		"xl": "2.074rem",
+		"xxl": "2.488rem",
+		"display": "2.986rem",
+		"display-lg": "3.583rem"
+	},
+	"font-weights": {
+		"light": 300,
+		"normal": 400,
+		"semibold": 600,
+		"bold": 700
+	},
+	"font-family-sans-serif": "'Segoe UI', 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', 'arial', 'sans-serif'",
+	"font-family-serif": "'Georgia', 'Times New Roman', serif",
+	"font-family-monospace": "'sfmono-regular', menlo, monaco, consolas, Liberation Mono, monospace",
+	"body-font-family": "$font-family-sans-serif",
+	"heading-font-family": "$font-family-sans-serif",
+	"accent-font-family": "'KenyanCoffee'",
 	"gutters": {
 		"xs": "0.5rem",
 		"sm": "0.5rem",

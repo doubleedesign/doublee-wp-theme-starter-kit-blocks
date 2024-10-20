@@ -1,0 +1,69 @@
+/*!
+Admin UI styling
+If you're in the .css file, you're in the wrong place - please edit common/scss/styles-admin.scss and compile it
+Also, block and TinyMCE content styles belong in styles-editor.scss
+ */
+
+// These .block-editor-block-inspector hiding-stuff styles get overridden in admin-hacks.js
+// once unwanted panels have been dealt with
+.block-editor-block-inspector__tabs .components-tab-panel__tab-content .components-panel__body,
+.block-editor-block-inspector__tabs .components-tab-panel__tab-content .components-panel__body .components-base-control {
+	opacity: 0;
+	height: 0;
+}
+
+.edit-post-visual-editor__post-title-wrapper {
+	margin-top: 1rem !important;
+}
+
+.editor-post-title__input {
+	border: 1px solid #8c8f94;
+	border-radius: 0.25rem;
+	margin: 1rem !important;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-weight: normal;
+	font-size: 1.4rem;
+	padding: 3px 8px; // same as classic editor
+}
+
+.mce-stack-layout .mce-menu-item-preview {
+	cursor: pointer;
+
+	.mce-text {
+		display: inline-flex;
+		align-items: center;
+		line-height: 2;
+		cursor: pointer;
+	}
+}
+
+.acf-field {
+
+	p.description {
+		line-height: 1.2 !important;
+		font-size: 0.9em !important;
+		font-style: italic;
+	}
+
+	&[data-name="inner_content_background"] {
+
+		.acf-label {
+			padding-left: 0;
+		}
+
+		.acf-field-select {
+			margin: 0 !important;
+
+			.acf-label {
+				display: none;
+			}
+		}
+	}
+}
+
+.block-editor-block-list__block {
+
+	.components-resizable-box__container {
+		max-width: 100% !important;
+	}
+}

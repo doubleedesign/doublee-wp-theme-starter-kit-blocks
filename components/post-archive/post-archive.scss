@@ -1,0 +1,9 @@
+.post-archive {
+
+	&__posts {
+
+		> .row {
+			justify-content: center;
+		}
+	}
+}

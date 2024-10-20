@@ -3,6 +3,8 @@
 	"apiVersion": 3,
 	"name": "doublee/call-to-action",
 	"title": "Call-to-action",
+	"style": "file:./call-to-action.css",
+	"editorStyle": "file:./call-to-action.css",
 	"category": "page-layout",
 	"parent": ["core/group"],
 	"description": "",

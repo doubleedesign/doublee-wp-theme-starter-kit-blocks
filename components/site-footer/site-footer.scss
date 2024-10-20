@@ -1,0 +1,42 @@
+.site-footer {
+	background: map-get($colours, 'dark');
+	color: map-get($colours, 'white');
+	
+	a {
+		color: map-get($colours, 'white');
+		text-decoration-color: rgba(map-get($colours, 'white'), 0.4);
+		
+		@include hover-focus-active {
+			text-decoration-color: map-get($colours, 'white');
+		}
+	}
+	
+	&__main {
+		@include gutter-padding-top();
+		@include gutter-padding-bottom();
+	}
+	
+	&__fineprint {
+		background: darken(map-get($colours, 'dark'), 5%);
+		@include gutter-padding-top(0.5);
+		@include gutter-padding-bottom(0.5);
+		
+		&__item {
+			text-align: center;
+			
+			@include media-breakpoint-up(md) {
+				text-align: left;
+			}
+			
+			&:last-of-type {
+				margin-top: map-get($gutters, 'xs');
+				
+				@include media-breakpoint-up(md) {
+					margin-top: 0;
+					text-align: right;
+				}
+			}
+		}
+	}
+	
+}

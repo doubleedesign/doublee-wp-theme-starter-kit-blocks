@@ -1,0 +1,71 @@
+/*!
+Editor styles for block and TinyMCE formatting
+If you're in the .css file, you're in the wrong place - please edit common/scss/styles-editor.scss and compile it
+Also, editor UI styles belong in styles-admin.css
+ */
+@import 'variables';
+@import 'core/functions';
+@import 'core/mixins';
+@import 'core/grid/bootstrap-grid';
+//@import '../../blocks/*';
+//@import '../../blocks/**/*';
+
+.block-editor-block-types-list__list-item button[class*='editor-block-list-item-media-text/text-media'] {
+	svg {
+		transform: scaleX(-1);
+	}
+}
+
+// Make the ACF "inner content background" field appear to be part of the "color" group
+// NOTE: This depends on customisations in my fork of the block editor;
+// otherwise the built-in background field will be in a separate tab and this should have no effect
+.components-tools-panel.color-block-support-panel + div .acf-block-fields:has([data-name="inner_content_background"]),
+.components-tools-panel.color-block-support-panel + div .acf-block-fields:has([data-name="full_width_background"]) {
+	border-top: 0;
+
+	[data-name="inner_content_background"],
+	[data-name="full_width_background"] {
+		margin: 0;
+		padding: 0 1rem 1rem;
+		border-bottom: 1px solid #ddd;
+
+		& + [data-name="inner_content_background"],
+		& + [data-name="full_width_background"] {
+			margin-top: -1px;
+			border-top: 2px solid white;
+		}
+	}
+}
+
+.wp-block-group > .block-list-appender {
+	width: 100%;
+	box-sizing: border-box;
+	border: 1px solid #000;
+	display: flex;
+	justify-content: center;
+
+	> .block-editor-inserter {
+		width: 100%;
+
+		> .block-list-appender__toggle {
+			height: auto;
+			line-height: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			padding: 1rem !important;
+			box-sizing: border-box;
+			background: var(--wp-admin-theme-color);
+			transition: all 0.2s ease;
+
+			&:hover, &:focus, &:active {
+				background: var(--wp-admin-theme-color-darker-20);
+			}
+		}
+	}
+}
+
+.alert p {
+	margin-top: 0;
+}
