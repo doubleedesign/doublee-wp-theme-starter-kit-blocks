@@ -1,126 +1,147 @@
 {
-	"version": 3,
-	"$schema": "https://schemas.wp.org/trunk/theme.json",
-	"settings": {
-		"appearanceTools": false,
-		"typography": {
-			"customFontSize": false,
-			"lineHeight": false,
-			"dropCap": false,
-			"fontStyle": false,
-			"fontWeight": false,
-			"letterSpacing": false,
-			"textDecoration": false,
-			"textTransform": false,
-			"fontSizes": [],
-			"fontFamilies": []
-		},
-		"color": {
-			"text": false,
-			"background": true,
-			"heading": false,
-			"link": false,
-			"defaultPalette": false,
-			"defaultGradients": false
-		},
-		"border": {
-			"radius": false,
-			"width": false,
-			"color": false,
-			"style": false
-		},
-		"blocks": {
-			"core/group": {
-				"color": {
-					"background": false,
-					"text": false,
-					"link": false
-				},
-				"typography": {
-					"customFontSize": false,
-					"lineHeight": false,
-					"dropCap": false,
-					"fontStyle": false,
-					"fontWeight": false,
-					"letterSpacing": false,
-					"textDecoration": false,
-					"textTransform": false,
-					"fontSizes": [],
-					"fontFamilies": []
-				}
-			},
-			"core/button": {
-				"color": {
-					"background": false,
-					"button": true
-				},
-				"border": {
-					"color": false,
-					"radius": false,
-					"style": false,
-					"width": false
-				}
-			},
-			"core/columns": {
-				"color": {
-					"background": false,
-					"text": false,
-					"link": false
-				}
-			},
-			"core/table": {
-				"color": {
-					"background": false,
-					"text": false,
-					"link": false
-				}
-			},
-			"core/heading": {
-				"color": {
-					"background": false,
-					"text": false,
-					"link": false
-				}
-			},
-			"core/paragraph": {
-				"color": {
-					"background": false,
-					"text": false,
-					"link": false
-				},
-				"typography": {
-					"customFontSize": false,
-					"lineHeight": false,
-					"dropCap": false,
-					"fontStyle": false,
-					"fontWeight": false,
-					"letterSpacing": false,
-					"textDecoration": false,
-					"textTransform": false,
-					"fontSizes": [],
-					"fontFamilies": []
-				}
-			},
-			"core/media-text": {
-				"color": {
-					"background": false,
-					"text": false,
-					"link": false,
-					"heading": false
-				},
-				"typography": {
-					"customFontSize": false,
-					"lineHeight": false,
-					"dropCap": false,
-					"fontStyle": false,
-					"fontWeight": false,
-					"letterSpacing": false,
-					"textDecoration": false,
-					"textTransform": false,
-					"fontSizes": [],
-					"fontFamilies": []
-				}
-			}
-		}
-	}
+    "version": 3,
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "settings": {
+        "appearanceTools": false,
+        "typography": {
+            "customFontSize": false,
+            "lineHeight": false,
+            "dropCap": false,
+            "fontStyle": false,
+            "fontWeight": false,
+            "letterSpacing": false,
+            "textDecoration": false,
+            "textTransform": false,
+            "fontSizes": [],
+            "fontFamilies": []
+        },
+        "color": {
+            "text": false,
+            "background": true,
+            "link": false,
+            "defaultPalette": false,
+            "defaultGradient": false,
+            "customGradient": false,
+            "palette": [
+                {
+                    "name": "primary",
+                    "slug": "primary",
+                    "color": "#845ec2"
+                },
+                {
+                    "name": "secondary",
+                    "slug": "secondary",
+                    "color": "#00c9a7"
+                },
+                {
+                    "name": "accent",
+                    "slug": "accent",
+                    "color": "#ba3caf"
+                },
+                {
+                    "name": "light",
+                    "slug": "light",
+                    "color": "#F0F0F2"
+                },
+                {
+                    "name": "dark",
+                    "slug": "dark",
+                    "color": "#4b4453"
+                },
+                {
+                    "name": "white",
+                    "slug": "white",
+                    "color": "#FFF"
+                }
+            ],
+            "gradients": [
+                {
+                    "name": "primary + light",
+                    "slug": "primary-light",
+                    "gradient": "linear-gradient(180deg, #845ec2 50%, #F0F0F2 50%)"
+                },
+                {
+                    "name": "Light + primary",
+                    "slug": "light-primary",
+                    "gradient": "linear-gradient(180deg, #F0F0F2 50%, #845ec2 50%)"
+                },
+                {
+                    "name": "primary + dark",
+                    "slug": "primary-dark",
+                    "gradient": "linear-gradient(180deg, #845ec2 50%, #4b4453 50%)"
+                },
+                {
+                    "name": "Dark + primary",
+                    "slug": "dark-primary",
+                    "gradient": "linear-gradient(180deg, #4b4453 50%, #845ec2 50%)"
+                },
+                {
+                    "name": "primary + white",
+                    "slug": "primary-white",
+                    "gradient": "linear-gradient(180deg, #845ec2 50%, #FFF 50%)"
+                },
+                {
+                    "name": "White + primary",
+                    "slug": "white-primary",
+                    "gradient": "linear-gradient(180deg, #FFF 50%, #845ec2 50%)"
+                },
+                {
+                    "name": "secondary + light",
+                    "slug": "secondary-light",
+                    "gradient": "linear-gradient(180deg, #00c9a7 50%, #F0F0F2 50%)"
+                },
+                {
+                    "name": "Light + secondary",
+                    "slug": "light-secondary",
+                    "gradient": "linear-gradient(180deg, #F0F0F2 50%, #00c9a7 50%)"
+                },
+                {
+                    "name": "secondary + dark",
+                    "slug": "secondary-dark",
+                    "gradient": "linear-gradient(180deg, #00c9a7 50%, #4b4453 50%)"
+                },
+                {
+                    "name": "Dark + secondary",
+                    "slug": "dark-secondary",
+                    "gradient": "linear-gradient(180deg, #4b4453 50%, #00c9a7 50%)"
+                },
+                {
+                    "name": "secondary + white",
+                    "slug": "secondary-white",
+                    "gradient": "linear-gradient(180deg, #00c9a7 50%, #FFF 50%)"
+                },
+                {
+                    "name": "White + secondary",
+                    "slug": "white-secondary",
+                    "gradient": "linear-gradient(180deg, #FFF 50%, #00c9a7 50%)"
+                },
+                {
+                    "name": "Light + dark",
+                    "slug": "light-dark",
+                    "gradient": "linear-gradient(180deg, #F0F0F2 50%, #4b4453 50%)"
+                },
+                {
+                    "name": "Dark + light",
+                    "slug": "dark-light",
+                    "gradient": "linear-gradient(180deg, #4b4453 50%, #F0F0F2 50%)"
+                },
+                {
+                    "name": "Light + white",
+                    "slug": "light-white",
+                    "gradient": "linear-gradient(180deg, #F0F0F2 50%, #FFF 50%)"
+                },
+                {
+                    "name": "White + light",
+                    "slug": "white-light",
+                    "gradient": "linear-gradient(180deg, #FFF 50%, #F0F0F2 50%)"
+                }
+            ]
+        },
+        "border": {
+            "radius": false,
+            "style": false,
+            "width": false,
+            "color": false
+        }
+    }
 }

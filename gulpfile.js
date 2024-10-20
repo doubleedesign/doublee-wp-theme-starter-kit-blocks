@@ -28,6 +28,125 @@ function variables(done) {
 	});
 }
 
+function themeJson(done) {
+	readFile(`./theme-vars.json`, 'utf8', async (error, data) => {
+		if (error) {
+			console.log(error);
+			done();
+		}
+
+		const theme = JSON.parse(data);
+		const wpFormat = {
+			colorPalette: Object.entries(theme.colours).map(([name, value]) => {
+				return {
+					name: name,
+					slug: name,
+					color: value,
+				};
+			}),
+			gradientPalette: Object.entries(theme.colours)
+				.filter(([name, value]) => ['primary', 'secondary'].includes(name))
+				.map(([name, value]) => {
+					return [
+						{
+							name: `${name} + light`,
+							slug: `${name}-light`,
+							gradient: `linear-gradient(180deg, ${value} 50%, ${theme.colours.light} 50%)`,
+						},
+						{
+							name: `Light + ${name}`,
+							slug: `light-${name}`,
+							gradient: `linear-gradient(180deg, ${theme.colours.light} 50%, ${value} 50%)`,
+						},
+						{
+							name: `${name} + dark`,
+							slug: `${name}-dark`,
+							gradient: `linear-gradient(180deg, ${value} 50%, ${theme.colours.dark} 50%)`,
+						},
+						{
+							name: `Dark + ${name}`,
+							slug: `dark-${name}`,
+							gradient: `linear-gradient(180deg, ${theme.colours.dark} 50%, ${value} 50%)`,
+						},
+						{
+							name: `${name} + white`,
+							slug: `${name}-white`,
+							gradient: `linear-gradient(180deg, ${value} 50%, ${theme.colours.white} 50%)`,
+						},
+						{
+							name: `White + ${name}`,
+							slug: `white-${name}`,
+							gradient: `linear-gradient(180deg, ${theme.colours.white} 50%, ${value} 50%)`,
+						},
+					];
+				}).flat().concat([
+					{
+						name: 'Light + dark',
+						slug: 'light-dark',
+						gradient: `linear-gradient(180deg, ${theme.colours.light} 50%, ${theme.colours.dark} 50%)`,
+					},
+					{
+						name: 'Dark + light',
+						slug: 'dark-light',
+						gradient: `linear-gradient(180deg, ${theme.colours.dark} 50%, ${theme.colours.light} 50%)`,
+					},
+					{
+						name: 'Light + white',
+						slug: 'light-white',
+						gradient: `linear-gradient(180deg, ${theme.colours.light} 50%, ${theme.colours.white} 50%)`,
+					},
+					{
+						name: 'White + light',
+						slug: 'white-light',
+						gradient: `linear-gradient(180deg, ${theme.colours.white} 50%, ${theme.colours.light} 50%)`,
+					},
+				]),
+		};
+
+		const themeJson = {
+			version: 3,
+			'$schema': 'https://schemas.wp.org/trunk/theme.json',
+			settings: {
+				// Defaults
+				appearanceTools: false,
+				typography: {
+					customFontSize: false,
+					lineHeight: false,
+					dropCap: false,
+					fontStyle: false,
+					fontWeight: false,
+					letterSpacing: false,
+					textDecoration: false,
+					textTransform: false,
+					fontSizes: [],
+					fontFamilies: [],
+				},
+				color: {
+					text: false,
+					background: true,
+					link: false,
+					defaultPalette: false,
+					defaultGradient: false,
+					customGradient: false,
+					palette: wpFormat.colorPalette.filter((color) => ['primary', 'secondary', 'accent', 'dark', 'light', 'white'].includes(color.name)),
+					gradients: wpFormat.gradientPalette,
+				},
+				border: {
+					radius: false,
+					style: false,
+					width: false,
+					color: false,
+				},
+			},
+		};
+
+		await writeFile('theme.json', JSON.stringify(themeJson, null, 4), '', () => {
+			console.log('theme.json created');
+			done();
+		});
+	});
+}
+
 // Bundle up all theme styles to be served on the front-end
 function theme() {
 	return gulp.src('common/scss/style.scss')
@@ -112,7 +231,7 @@ function watchFiles() {
 	const options = { events: ['change', 'add', 'unlink'], ignoreInitial: false};
 
 	// Recompile everything if the theme variables change
-	gulp.watch('theme-vars.json', options, gulp.series(variables, components, block_styles, theme, editor, admin));
+	gulp.watch('theme-vars.json', options, gulp.series(variables, themeJson, components, block_styles, theme, editor, admin));
 
 	// Compile the whole-theme stylesheet and editor styles when anything other than _variables.scss changes
 	gulp.watch(['common/scss/**/*.scss', 'components/**/*.scss', 'blocks/**/*/scss', '!**/_variables.scss'], options, gulp.parallel(theme, editor));
@@ -134,6 +253,7 @@ function blocks(cb) {
 
 export {
 	variables,
+	themeJson,
 	theme,
 	components,
 	blocks,
