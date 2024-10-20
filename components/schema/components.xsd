@@ -1,0 +1,14 @@
+<!-- XML schema describing theme custom Vue components -->
+<!-- This is here purely to give PHPStorm an understanding of the Vue components when used outside a .vue file -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:vue="vue.xsd"
+           version="1.1">
+    <xs:element name="site-navigation">
+        <xs:complexType>
+            <xs:attribute name="logourl" type="xs:string"/>
+            <xs:attribute name="sitename" type="xs:string"/>
+            <xs:attribute name="menu" type="xs:string"/>
+            <xs:attribute name="background" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

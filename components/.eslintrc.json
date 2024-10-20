@@ -1,0 +1,11 @@
+{
+	"root": false,
+	"parser": "vue-eslint-parser",
+	"env": {
+		"browser": true
+	},
+	"rules": {
+		"no-undef": "off",
+		"no-mixed-spaces-and-tabs": "off"
+	}
+}

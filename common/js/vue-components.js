@@ -1,6 +1,6 @@
 import * as Vue from './vendor/vue-esm-browser.js';
 
-const themeUrl = '/wp-content/themes/starter-kit-classic';
+const themeUrl = '/wp-content/themes/starter-kit-blocks';
 
 const vueSfcLoaderOptions = {
 	moduleCache: { vue: Vue },

@@ -7,7 +7,7 @@
         $menu = Starterkit_Menus::get_nav_menu_items_by_location('primary', array('depth' => 2));
     }
     ?>
-    <div data-vue-component="site-navigation" xmlns="../vue.xsd">
+    <div data-vue-component="site-navigation" xmlns="schema/components.xsd">
         <site-navigation
                 logourl='<?php echo $logo; ?>'
                 sitename='<?php echo $name; ?>'

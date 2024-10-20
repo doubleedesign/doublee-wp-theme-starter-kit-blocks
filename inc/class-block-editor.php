@@ -53,8 +53,12 @@ class Starterkit_Block_Editor {
                 wp_enqueue_style('child-shared-block-styles', get_stylesheet_directory_uri() . '/blocks/global.css', array(), $version, 'all');
             }
 
-            if (file_exists(get_stylesheet_directory() . '/blocks/core.css')) {
+            if (file_exists(get_stylesheet_directory() . '/blocks/core/core.css')) {
                 wp_enqueue_style('child-core-block-style-overrides', get_stylesheet_directory_uri() . '/blocks/core/core.css', array(), $version, 'all');
+            }
+
+            if (file_exists(get_stylesheet_directory() . '/blocks/doublee/doublee.css')) {
+                wp_enqueue_style('child-starterkit-block-style-overrides', get_stylesheet_directory_uri() . '/blocks/doublee/doublee.css', array(), $version, 'all');
             }
         }
     }

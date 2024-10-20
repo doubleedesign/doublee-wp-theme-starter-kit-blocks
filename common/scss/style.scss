@@ -14,5 +14,6 @@ Text Domain:    starterkit
 @import 'core/mixins';
 @import 'core/grid/bootstrap-grid';
 @import '../../components/*';
+@import '../../components/**/*';
 // Note: Block styles are loaded on a per-block basis, with co-located styles specified in each block.json
 // There is also a global.css file for shared block styles and core.css for native block overrides, which are loaded separately

@@ -35,7 +35,7 @@ export default {
         },
         async fetchTheme() {
             try {
-                const response = await fetch('/wp-content/themes/starter-kit-classic/theme-vars.json');
+                const response = await fetch('/wp-content/themes/starter-kit-blocks/theme-vars.json');
                 this.theme = await response.json();
             } catch (error) {
                 console.error('Error fetching theme:', error);

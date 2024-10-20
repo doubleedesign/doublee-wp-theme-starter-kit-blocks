@@ -7,8 +7,6 @@ Also, editor UI styles belong in styles-admin.css
 @import 'core/functions';
 @import 'core/mixins';
 @import 'core/grid/bootstrap-grid';
-//@import '../../blocks/*';
-//@import '../../blocks/**/*';
 
 .block-editor-block-types-list__list-item button[class*='editor-block-list-item-media-text/text-media'] {
 	svg {
